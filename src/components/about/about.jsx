@@ -4,13 +4,11 @@ import { AboutHome } from '..';
 import AboutCategory from './about-category';
 
 export default function about() {
-	// const color = useColorModeValue('light', 'dark');
-	// useColorModeValue('white', 'url(https://themewagon.github.io/edu-meeting/assets/images/meetings-page-bg.jpg)')
 	return (
 		<Box
 			w={'full'}
 			h={'full'}
-			bg={'url(https://themewagon.github.io/edu-meeting/assets/images/meetings-page-bg.jpg)'}
+			bg={useColorModeValue('white', 'url(https://themewagon.github.io/edu-meeting/assets/images/meetings-page-bg.jpg)')}
 			bgRepeat={'no-repeat'}
 			bgSize={'cover'}
 			pb={10}

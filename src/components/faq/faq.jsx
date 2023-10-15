@@ -2,6 +2,7 @@
 import { faq } from '@/config/constants';
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Heading, Image } from '@chakra-ui/react';
 import React from 'react';
+import FaqContact from './faq-contact';
 
 export default function Faq() {
 	return (
