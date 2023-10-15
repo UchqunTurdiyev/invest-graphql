@@ -4,7 +4,6 @@ import { AboutHome } from '..';
 import AboutCategory from './about-category';
 
 export default function about() {
-	const a = 'salom';
 	return (
 		<Box
 			w={'full'}

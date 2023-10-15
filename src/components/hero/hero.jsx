@@ -4,14 +4,13 @@ import { hero } from '@/config/constants';
 import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
-	const textUse = useColorModeValue('gray.700', 'gray.200');
 	const { t } = useTranslation();
 	return (
 		<Box>
 			{hero.map(el => (
-				<div key={el.id}>
+				<Box key={el.id}>
 					<Box w={'full'} h={'600px'} pos={'relative'}>
-						<Image src={el.image} alt='home' w={'full'} h={'full'} objectFit={'cover'} />
+						<Image src={el.image} alt={el.title} w={'full'} h={'full'} objectFit={'cover'} />
 						<Box
 							pos={'absolute'}
 							top={0}
@@ -25,7 +24,7 @@ export default function Hero() {
 						<Text color={textUse} fontWeight={'700'}>
 							{el.title_top}
 						</Text>
-						<Heading color={textUse} my={4}>
+						<Heading color={useColorModeValue('gray.700', 'gray.200')} my={4}>
 							{/* {el.title} */}
 							{t('mainHeader', { ns: 'layout' })}
 						</Heading>
@@ -36,7 +35,7 @@ export default function Hero() {
 							JOIN US NOW!
 						</Button> */}
 					</Box>
-				</div>
+				</Box>
 			))}
 		</Box>
 	);

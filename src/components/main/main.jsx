@@ -26,7 +26,7 @@ export default function Main({ posts }) {
 				<HomePageCarousel />
 				<UpcomingMeeting posts={posts} />
 				<Degree />
-				<Faq />
+				{/* <Faq /> */}
 				<Statistic />
 				<PopularCourse />
 			</Box>

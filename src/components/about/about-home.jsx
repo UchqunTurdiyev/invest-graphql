@@ -3,13 +3,19 @@ import React from 'react';
 import AboutCategory from './about-category';
 
 export default function AboutHome() {
-	const background = useColorModeValue('whiteAlpha.200', 'rgba(0,0,0, 0.3)');
 	return (
 		<Box>
 			{aboutHome.length
 				? aboutHome.map(el => (
 						<Box key={el.id} pos={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
-							<Box pos={'absolute'} w={'full'} h={'full'} bg={background} top={0} left={0}></Box>
+							<Box
+								pos={'absolute'}
+								w={'full'}
+								h={'full'}
+								bg={useColorModeValue('whiteAlpha.200', 'rgba(0,0,0, 0.3)')}
+								top={0}
+								left={0}
+							></Box>
 							<Image width={'full'} h={'400px'} objectFit={'cover'} src={el.image} alt={el.title} />
 							<Box pos={'absolute'}>
 								<Text textAlign={'center'} color={'white'}>
