@@ -4,6 +4,7 @@ import { AboutHome } from '..';
 import AboutCategory from './about-category';
 
 export default function about() {
+	const color = useColorModeValue('light', 'dark');
 	return (
 		<Box
 			w={'full'}
