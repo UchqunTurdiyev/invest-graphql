@@ -1,6 +1,12 @@
-import { Box } from '@chakra-ui/react';
+import { withLayout } from '@/layout/layout';
+import MetingDetailPage from '@/page-component/meting-detail/meting-detail-page';
+import { useParams } from 'next/navigation';
 import React from 'react';
 
-export default function MetingPage() {
-	return <Box>MetingPage</Box>;
-}
+const MetingPageDetail = () => {
+	const param = useParams();
+	console.log(param);
+	return <MetingDetailPage />;
+};
+
+export default withLayout(MetingPageDetail);

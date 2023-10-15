@@ -1,9 +1,11 @@
 'use client';
 import { Box, Heading, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import { hero } from '@/config/constants';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
 	const textUse = useColorModeValue('gray.700', 'gray.200');
+	const { t } = useTranslation();
 	return (
 		<Box>
 			{hero.map(el => (
@@ -24,7 +26,8 @@ export default function Hero() {
 							{el.title_top}
 						</Text>
 						<Heading color={textUse} my={4}>
-							{el.title}
+							{/* {el.title} */}
+							{t('mainHeader', { ns: 'layout' })}
 						</Heading>
 						<Text color={textUse} fontWeight={'600'}>
 							{el.description}

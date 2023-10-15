@@ -50,7 +50,7 @@ export default function Header() {
 				<Flex display={{ base: 'none', md: 'flex' }} gap={7}>
 					<Link href={'/'}>{t('home', { ns: 'layout' })}</Link>
 					<Link href={'/about'}>{t('about', { ns: 'layout' })}</Link>
-					<Link href={'/'}>{t('course', { ns: 'layout' })}</Link>
+					<Link href={'/course'}>{t('course', { ns: 'layout' })}</Link>
 					<Link href={'/'}>{t('contact', { ns: 'layout' })}</Link>
 				</Flex>
 				<HStack display={{ base: 'none', md: 'flex' }}>
