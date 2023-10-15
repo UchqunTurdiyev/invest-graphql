@@ -23,6 +23,7 @@ import { language } from '@/config/constants';
 export default function Header() {
 	const { toggleColorMode, colorMode } = useColorMode();
 	const { t, i18n } = useTranslation();
+	// const border = useColorModeValue('gray.200', 'gray.700')
 
 	const onLanguage = lng => {
 		i18n.changeLanguage(lng);
@@ -36,7 +37,7 @@ export default function Header() {
 			bg={'rgba(250,250,250,0.15)'}
 			justifyContent={'space-between'}
 			borderBottom={'1px'}
-			borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
+			borderBottomColor={'gray.400'}
 			shadow={'base'}
 		>
 			<Link href={'/'}>
@@ -70,7 +71,7 @@ export default function Header() {
 									backgroundColor={i18n.resolvedLanguage === item.lng ? 'facebook.500' : ''}
 								>
 									<Flex gap={4}>
-										<Image w={8} src={item.img} /> {item.nativeLang}
+										<Image w={8} src={item.img} alt='A descriptive text for the image' /> {item.nativeLang}
 									</Flex>
 								</MenuItem>
 							))}
