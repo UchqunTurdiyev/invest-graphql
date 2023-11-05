@@ -9,10 +9,13 @@ import Degree from '../degree/degree';
 import Faq from '../faq/faq';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 
-export default function Main({ posts }) {
+export default function Main({ posts, hero, carousel, education, upcoming }) {
+	// console.log(upcoming);
 	return (
 		<>
-			<Hero />
+			{hero.map(item => (
+				<Hero key={item.node.id} item={item.node} />
+			))}
 			<Box
 				w={'full'}
 				bg={useColorModeValue(
@@ -23,10 +26,10 @@ export default function Main({ posts }) {
 				bgSize={'cover'}
 				bgAttachment={'fixed'}
 			>
-				<HomePageCarousel />
-				<UpcomingMeeting posts={posts} />
+				<HomePageCarousel itemCar={carousel} />
+				<UpcomingMeeting upcoming={upcoming} />
 				<Degree />
-				{/* <Faq /> */}
+				<Faq />
 				<Statistic />
 				<PopularCourse />
 			</Box>

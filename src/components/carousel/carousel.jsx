@@ -4,7 +4,7 @@ import { Box, Heading, Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-export default function HomePageCarousel() {
+export default function HomePageCarousel({ itemCar }) {
 	const bgImg = useColorModeValue(
 		'url(https://damion.club/uploads/posts/2022-01/thumbs/1642187431_55-damion-club-p-informatika-fon-55.png)',
 		'url(https://themewagon.github.io/edu-meeting/assets/images/service-item-bg.jpg)'
@@ -31,10 +31,10 @@ export default function HomePageCarousel() {
 	return (
 		<Box px={{ base: 2, lg: 20 }} py={5} mt={'-120px'}>
 			<Carousel responsive={responsive}>
-				{data.length
-					? data.map(el => (
+				{itemCar.length
+					? itemCar.map(el => (
 							<Box
-								key={el.id}
+								key={el.node.id}
 								w={'95%'}
 								mx={'auto'}
 								h={'250px'}
@@ -50,8 +50,8 @@ export default function HomePageCarousel() {
 								bgSize={'cover'}
 							>
 								{/* <Icon fontSize={'2xl'}     /> */}
-								<Heading py={4}>{el.title}</Heading>
-								<Text textAlign={'center'}>{el.description}</Text>
+								<Heading py={4}>{el.node.title}</Heading>
+								<Text textAlign={'center'}>{el.node.desc}</Text>
 							</Box>
 					  ))
 					: 'Loading...'}
