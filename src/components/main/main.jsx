@@ -9,8 +9,8 @@ import Degree from '../degree/degree';
 import Faq from '../faq/faq';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 
-export default function Main({ posts, hero, carousel, education, upcoming }) {
-	// console.log(upcoming);
+export default function Main({ posts, hero, carousel, education, upcoming, course }) {
+	// console.log(course);
 	return (
 		<>
 			{hero.map(item => (
@@ -31,7 +31,7 @@ export default function Main({ posts, hero, carousel, education, upcoming }) {
 				<Degree />
 				<Faq />
 				<Statistic />
-				<PopularCourse />
+				<PopularCourse course={course} />
 			</Box>
 		</>
 	);

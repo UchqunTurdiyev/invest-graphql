@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 export default function Hero({ item }) {
 	const textUse = useColorModeValue('gray.700', 'gray.200');
 	const { t } = useTranslation();
-	console.log(item);
 
 	return (
 		<Box>

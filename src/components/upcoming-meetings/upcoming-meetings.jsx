@@ -9,7 +9,7 @@ export default function UpcomingMeeting({ upcoming }) {
 	const btnMude = useColorModeValue('red.300', 'red.800');
 	// const elCardMud = useColorModeValue('white', 'gray.700');
 
-	// console.log(upcoming);
+	const upcomingHero = upcoming.slice(0, 4);
 	return (
 		<Box w={'full'} py={12} px={{ base: 2, lg: 20 }}>
 			{upcomingMeetings.map(el => (
@@ -29,7 +29,7 @@ export default function UpcomingMeeting({ upcoming }) {
 							</Button>
 						</Box>
 						<Grid gridTemplateColumns={'repeat(2, 1fr)'} w={'full'} h={'auto'} gap={4}>
-							{upcoming.map(item => (
+							{upcomingHero.map(item => (
 								<GridItem key={item.node.id}>
 									<Link href={`/metings/${item.node.slug}`}>
 										<Card w={'full'} h={'60'} borderRadius={'md'}>

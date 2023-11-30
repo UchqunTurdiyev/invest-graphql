@@ -82,3 +82,48 @@ export const getEducation = async () => {
 	const result = await request(graphqlAPI, query);
 	return result.educationsConnection.edges;
 };
+
+export const getContainer = async () => {
+	const query = gql`
+		query Assets {
+			containersConnection {
+				edges {
+					node {
+						facebook
+						id
+						instagram
+						number
+						tel
+						telegram
+						youtube
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.containersConnection.edges;
+};
+
+export const getCourse = async () => {
+	const query = gql`
+		query Assets {
+			coursesConnection {
+				edges {
+					node {
+						title
+						photo {
+							url
+						}
+						id
+						desc
+						dataTime
+						slug
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.coursesConnection.edges;
+};

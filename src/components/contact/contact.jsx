@@ -3,7 +3,7 @@ import React from 'react';
 export default function Contact() {
 	return (
 		<div>
-			{/* <!-- Container for demo purpose --> */}
+			{/* <!-- Container htmlFor demo purpose --> */}
 			<div className='container mx-auto md:px-6'>
 				{/* <!-- Section: Design Block --> */}
 				<section className='mb-32'>
@@ -11,7 +11,7 @@ export default function Contact() {
 					<div className='container px-6 md:px-12'>
 						<div className='block rounded-lg  px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 md:py-16 md:px-12 -mt-[100px] backdrop-blur-[30px]'>
 							<div className='mx-auto max-w-[700px]'>
-								<form>
+								<htmlFor>
 									<div className='relative mb-6' data-te-input-wrapper-init>
 										<input
 											type='text'
@@ -21,7 +21,7 @@ export default function Contact() {
 										/>
 										<label
 											className='pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary'
-											for='exampleInput90'
+											htmlFor='exampleInput90'
 										>
 											Name
 										</label>
@@ -35,7 +35,7 @@ export default function Contact() {
 										/>
 										<label
 											className='pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary'
-											for='exampleInput91'
+											htmlFor='exampleInput91'
 										>
 											Email address
 										</label>
@@ -48,7 +48,7 @@ export default function Contact() {
 											placeholder='Your message'
 										></textarea>
 										<label
-											for='exampleFormControlTextarea1'
+											htmlFor='exampleFormControlTextarea1'
 											className='pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary'
 										>
 											Message
@@ -62,7 +62,7 @@ export default function Contact() {
 											id='exampleCheck96'
 											checked
 										/>
-										<label className='inline-block pl-[0.15rem] hover:cursor-pointer' for='exampleCheck96'>
+										<label className='inline-block pl-[0.15rem] hover:cursor-pointer' htmlFor='exampleCheck96'>
 											Send me a copy of this message
 										</label>
 									</div>
@@ -74,15 +74,15 @@ export default function Contact() {
 									>
 										Send
 									</button>
-								</form>
+								</htmlFor>
 							</div>
 						</div>
 					</div>
 				</section>
 				{/* <!-- Section: Design Block --> */}
 			</div>
-			{/* <!-- Container for demo purpose --> */}
-			{/* <!-- Container for demo purpose --> */}
+			{/* <!-- Container htmlFor demo purpose --> */}
+			{/* <!-- Container htmlFor demo purpose --> */}
 			<div className='container my-24 mx-auto md:px-6'>
 				{/* <!-- Section: Design Block --> */}
 				<section className='mb-32'>
@@ -93,8 +93,8 @@ export default function Contact() {
 									<iframe
 										src='https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed'
 										className='left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg'
-										frameborder='0'
-										allowfullscreen
+										frameBorder='0'
+										allowFullScreen
 									></iframe>
 								</div>
 							</div>
@@ -215,7 +215,7 @@ export default function Contact() {
 				</section>
 				{/* <!-- Section: Design Block --> */}
 			</div>
-			{/* <!-- Container for demo purpose --> */}
+			{/* <!-- Container htmlFor demo purpose --> */}
 		</div>
 	);
 }
