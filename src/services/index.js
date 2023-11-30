@@ -127,3 +127,26 @@ export const getCourse = async () => {
 	const result = await request(graphqlAPI, query);
 	return result.coursesConnection.edges;
 };
+
+export const getAbout = async () => {
+	const query = gql`
+		query Assets {
+			aboutsConnection {
+				edges {
+					node {
+						data
+						desc
+						id
+						slug
+						title
+						photo {
+							url
+						}
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.aboutsConnection.edges;
+};

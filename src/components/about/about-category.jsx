@@ -3,24 +3,24 @@ import React, { useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../footer/footer';
 
-export default function AboutCategory() {
+export default function AboutCategory({ aboutData }) {
 	const [filter, setFilter] = useState('all-categories');
 	const backgroundColor = useColorModeValue('gray.200', 'gray.900');
 
 	const filteredData = useCallback(() => {
 		switch (filter) {
 			case 'sayohat':
-				return allCategory.filter(c => c.category === 'sayohat');
+				return aboutData.filter(c => c.node.slug === 'sayohat');
 			case 'bayramlar':
-				return allCategory.filter(c => c.category === 'bayramlar');
+				return aboutData.filter(c => c.node.slug === 'bayramlar');
 			case 'uchrashuvlar':
-				return allCategory.filter(c => c.category === 'uchrashuvlar');
-			case 'dars-jarayoni':
-				return allCategory.filter(c => c.category === 'dars-jarayoni');
+				return aboutData.filter(c => c.node.slug === 'uchrashuvlar');
+			case 'dars':
+				return aboutData.filter(c => c.node.slug === 'dars');
 			case 'imtihon':
-				return allCategory.filter(c => c.category === 'imtihon');
+				return aboutData.filter(c => c.node.slug === 'imtihon');
 			default:
-				return allCategory;
+				return aboutData;
 		}
 	}, [filter]);
 	return (
@@ -53,32 +53,37 @@ export default function AboutCategory() {
 					gap={4}
 					mt={10}
 				>
-					{filteredData().length
-						? filteredData().map(el => (
-								<motion.div key={el.name} layout>
-									<Box pos={'relative'}>
-										<Image src={el.image} alt={el.name} borderRadius={'lg'} w={'full'} h={'250px'} objectFit={'cover'} />
-										<Box
-											pos={'absolute'}
-											minH={'90px'}
-											bg={backgroundColor}
-											left={2}
-											right={2}
-											bottom={-10}
-											borderRadius={'lg'}
-											boxShadow={'dark-lg'}
-											p={2}
-										>
-											<Text fontSize={'xl'}>{el.name}</Text>
-											<Text fontSize={'sm'} color={'gray.500'}>
-												{el.description.slice(0, 100)}...
-											</Text>
-											<Button variant={'link'}>More...</Button>
-										</Box>
-									</Box>
-								</motion.div>
-						  ))
-						: 'Not found'}
+					{filteredData().map(el => (
+						<motion.div key={el.node.id} layout>
+							<Box pos={'relative'}>
+								<Image
+									src={el.node.photo.url}
+									alt={el.node.title}
+									borderRadius={'lg'}
+									w={'full'}
+									h={'250px'}
+									objectFit={'cover'}
+								/>
+								<Box
+									pos={'absolute'}
+									minH={'90px'}
+									bg={backgroundColor}
+									left={2}
+									right={2}
+									bottom={-10}
+									borderRadius={'lg'}
+									boxShadow={'dark-lg'}
+									p={2}
+								>
+									<Text fontSize={'xl'}>{el.node.title}</Text>
+									<Text fontSize={'sm'} color={'gray.500'}>
+										{el.node.desc.slice(0, 100)}...
+									</Text>
+									<Button variant={'link'}>More...</Button>
+								</Box>
+							</Box>
+						</motion.div>
+					))}
 				</Grid>
 			</Box>
 			{/* <Box mt={10}>
@@ -93,7 +98,7 @@ export const allCategoryButton = [
 	{ label: 'Sayohat', id: 'sayohat' },
 	{ label: 'Bayramlar', id: 'bayramlar' },
 	{ label: 'Uchrashuvlar', id: 'uchrashuvlar' },
-	{ label: 'Dars jarayoni', id: 'dars-jarayoni' },
+	{ label: 'Dars jarayoni', id: 'dars' },
 	{ label: 'Imtihon', id: 'imtihon' },
 ];
 

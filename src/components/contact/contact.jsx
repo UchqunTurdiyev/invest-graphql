@@ -91,7 +91,7 @@ export default function Contact() {
 							<div className='block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-4/12'>
 								<div className='h-[500px] w-full'>
 									<iframe
-										src='https://maps.google.com/maps?q=manhatan&t=&z=13&ie=UTF8&iwloc=&output=embed'
+										src='https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2955.0987936998927!2d66.96837664999998!3d39.67078774999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sru!2s!4v1701360127322!5m2!1sru!2s'
 										className='left-0 top-0 h-full w-full rounded-t-lg lg:rounded-tr-none lg:rounded-bl-lg'
 										frameBorder='0'
 										allowFullScreen

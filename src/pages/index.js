@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import {
+	getAbout,
 	getContainer,
 	getCourse,
 	getEducation,
@@ -14,7 +15,7 @@ import { Footer, Header, Main } from '@/components';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home({ posts, hero, carousel, education, upcoming, container, course }) {
+export default function Home({ posts, hero, carousel, upcoming, container, course }) {
 	return (
 		<>
 			<Header />
