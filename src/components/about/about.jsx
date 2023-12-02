@@ -9,7 +9,6 @@ export default function about() {
 	useEffect(() => {
 		getAbout().then(res => setAboutData(res));
 	}, []);
-	console.log(aboutData);
 	return (
 		<Box
 			w={'full'}
