@@ -34,6 +34,7 @@
     "react-multi-carousel": "^2.8.4"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.3",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
