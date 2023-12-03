@@ -96,19 +96,27 @@ export default function Header() {
 				>
 					<Flex flexDirection={'column'} textAlign={'center'}>
 						<Button variant={'outline'} py={7}>
-							<Link href={'/'}>{t('home', { ns: 'layout' })}</Link>
+							<Link className='text-slate-400' href={'/'}>
+								{t('home', { ns: 'layout' })}
+							</Link>
 						</Button>
 						<Button variant={'outline'} py={7}>
-							<Link href={'/about'}>{t('about', { ns: 'layout' })}</Link>
+							<Link className='text-slate-400' href={'/about'}>
+								{t('about', { ns: 'layout' })}
+							</Link>
 						</Button>
 						<Button variant={'outline'} py={7}>
-							<Link href={'/course'}>{t('course', { ns: 'layout' })}</Link>
+							<Link className='text-slate-400' href={'/course'}>
+								{t('course', { ns: 'layout' })}
+							</Link>
 						</Button>
 						<Button variant={'outline'} py={7}>
-							<Link href={'/contact'}>{t('contact', { ns: 'layout' })}</Link>
+							<Link className='text-slate-400' href={'/contact'}>
+								{t('contact', { ns: 'layout' })}
+							</Link>
 						</Button>
 					</Flex>
-					<HStack>
+					<HStack ml={4}>
 						<Menu>
 							<MenuButton
 								aria-label='translate'
@@ -151,10 +159,18 @@ export default function Header() {
 			)}
 			<HStack gap={8} display={{ sm: 'none', md: 'flex' }}>
 				<Flex display={{ base: 'none', md: 'flex' }} gap={7}>
-					<Link href={'/'}>{t('home', { ns: 'layout' })}</Link>
-					<Link href={'/about'}>{t('about', { ns: 'layout' })}</Link>
-					<Link href={'/course'}>{t('course', { ns: 'layout' })}</Link>
-					<Link href={'/contact'}>{t('contact', { ns: 'layout' })}</Link>
+					<Link className='text-white/80' href={'/'}>
+						{t('home', { ns: 'layout' })}
+					</Link>
+					<Link className='text-white/80' href={'/about'}>
+						{t('about', { ns: 'layout' })}
+					</Link>
+					<Link className='text-white/80' href={'/course'}>
+						{t('course', { ns: 'layout' })}
+					</Link>
+					<Link className='text-white/80' href={'/contact'}>
+						{t('contact', { ns: 'layout' })}
+					</Link>
 				</Flex>
 				<HStack display={{ base: 'none', md: 'flex' }}>
 					<Menu>

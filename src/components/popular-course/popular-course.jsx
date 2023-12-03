@@ -58,7 +58,7 @@ export default function PopularCourse({ course }) {
 									/>
 									<Stack mt='6' spacing='3'>
 										<Heading size='md'>{el.node.title}</Heading>
-										<Text>{el.node.desc}</Text>
+										<Text>{el.node.desc.slice(0, 40)}...</Text>
 									</Stack>
 								</CardBody>
 								<Divider />

@@ -6,7 +6,7 @@ export default function Layout({ children }) {
 	return (
 		<Box>
 			<Header />
-			<Box>{children}</Box>
+			<Box pt={24}>{children}</Box>
 			<Footer />
 		</Box>
 	);

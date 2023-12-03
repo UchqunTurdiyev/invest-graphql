@@ -2,12 +2,12 @@ import { Box, useColorModeValue } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import { AboutHome } from '..';
 import AboutCategory from './about-category';
-import { getAbout } from '@/services';
+import { getGallery } from '@/services';
 
 export default function about() {
 	const [aboutData, setAboutData] = useState([]);
 	useEffect(() => {
-		getAbout().then(res => setAboutData(res));
+		getGallery().then(res => setAboutData(res));
 	}, []);
 	return (
 		<Box

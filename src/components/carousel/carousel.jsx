@@ -6,7 +6,7 @@ import 'react-multi-carousel/lib/styles.css';
 
 export default function HomePageCarousel({ itemCar }) {
 	const bgImg = useColorModeValue(
-		'url(https://damion.club/uploads/posts/2022-01/thumbs/1642187431_55-damion-club-p-informatika-fon-55.png)',
+		'url(https://avatars.mds.yandex.net/i?id=63790cc5425d5fc7d8324bfb5d46c2fd85813e72-3560695-images-thumbs&ref=rim&n=33&w=351&h=250)',
 		'url(https://themewagon.github.io/edu-meeting/assets/images/service-item-bg.jpg)'
 	);
 	const responsive = {

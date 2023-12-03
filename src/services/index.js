@@ -128,10 +128,10 @@ export const getCourse = async () => {
 	return result.coursesConnection.edges;
 };
 
-export const getAbout = async () => {
+export const getGallery = async () => {
 	const query = gql`
 		query Assets {
-			aboutsConnection {
+			gallerysConnection {
 				edges {
 					node {
 						data
@@ -148,5 +148,79 @@ export const getAbout = async () => {
 		}
 	`;
 	const result = await request(graphqlAPI, query);
+	return result.gallerysConnection.edges;
+};
+
+export const getContact = async () => {
+	const query = gql`
+		query Assets {
+			contactsConnection {
+				edges {
+					node {
+						id
+						instagram
+						num
+						telegram
+						title
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.contactsConnection.edges;
+};
+
+export const getAboutHero = async () => {
+	const query = gql`
+		query Assets {
+			aboutsConnection {
+				edges {
+					node {
+						id
+						title
+						desc
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
 	return result.aboutsConnection.edges;
+};
+
+export const getAboutLeft = async () => {
+	const query = gql`
+		query Assets {
+			aboutLeftsConnection {
+				edges {
+					node {
+						id
+						title
+						desc
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.aboutLeftsConnection.edges;
+};
+
+export const getAboutBottom = async () => {
+	const query = gql`
+		query Assets {
+			scienceAboutsConnection {
+				edges {
+					node {
+						id
+						title
+						desc
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.scienceAboutsConnection.edges;
 };

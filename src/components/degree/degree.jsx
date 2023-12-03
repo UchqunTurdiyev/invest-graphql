@@ -15,7 +15,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 
-export default function Degree() {
+export default function Degree({ aboutLeft, aboutHero }) {
 	const headUse = useColorModeValue('white', 'white');
 	const textUse = useColorModeValue('white', 'white');
 	return (
@@ -24,18 +24,18 @@ export default function Degree() {
 				<Box key={id} w={'full'} py={28} px={{ base: 2, lg: 20 }} bg={`url(${el.image_bg})`} bgAttachment={'fixed'}>
 					<Flex gap={10} flexDirection={{ base: 'column', md: 'row' }}>
 						<Box w={'full'}>
-							{el.degree.map((deg, idx) => (
+							{aboutLeft.map((deg, idx) => (
 								<Box w={'full'} mb={8} p={8} bg={'rgba(250,250,250,0.15)'} key={idx}>
-									<Heading color={headUse}>{deg.title}</Heading>
+									<Heading color={headUse}>{deg.node.title}</Heading>
 									<Text color={textUse} py={4}>
-										{deg.description}
+										{deg.node.desc}
 									</Text>
 									<Button>JOIN US NOW</Button>
 								</Box>
 							))}
 						</Box>
 						<Accordion allowToggle defaultIndex={[0]} w={'full'} p={6} bg={'white'} textColor={'gray.700'} rounded={'3xl'}>
-							{el.accardion.map(data => (
+							{aboutHero.map(data => (
 								<div key={data.id}>
 									<AccordionItem>
 										<h2>
@@ -48,12 +48,12 @@ export default function Degree() {
 													fontWeight={'bold'}
 													color={data.id == 0 ? 'red' : '#333'}
 												>
-													{data.title}
+													{data.node.title}
 												</Box>
 												<AccordionIcon />
 											</AccordionButton>
 										</h2>
-										<AccordionPanel pb={4}>{data.description}</AccordionPanel>
+										<AccordionPanel pb={4}>{data.node.desc}</AccordionPanel>
 									</AccordionItem>
 								</div>
 							))}

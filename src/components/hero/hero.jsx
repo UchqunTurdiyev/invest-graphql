@@ -4,12 +4,17 @@ import { hero } from '@/config/constants';
 import { useTranslation } from 'react-i18next';
 
 export default function Hero({ item }) {
-	const textUse = useColorModeValue('gray.700', 'gray.200');
+	const textUse = useColorModeValue('gray.200', 'gray.200');
+	const gradientBg = useColorModeValue(
+		'linear(to-r, rgba(0,0,0, 0.5), transparent)',
+		'linear(to-r, rgba(0,0,0, 0.6), transparent)'
+	);
 	const { t } = useTranslation();
 
 	return (
-		<Box mt={{ sm: 14, md: 20, lg: 24 }}>
-			<Box w={'full'} h={'600px'} pos={'relative'}>
+		<Box>
+			<Box w={'full'} h={'650px'} pos={'relative'}>
+				<Box position={'absolute'} top={0} left={0} w={'full'} h={'full'} bgGradient={gradientBg}></Box>
 				<Image src={item.photo.url} alt='home' w={'full'} h={'full'} objectFit={'cover'} />
 				<Box
 					pos={'absolute'}
