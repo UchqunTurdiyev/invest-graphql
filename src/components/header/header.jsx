@@ -19,8 +19,11 @@ import { MdGTranslate } from 'react-icons/md';
 import { BiMenuAltRight } from 'react-icons/bi';
 import { useTranslation } from 'react-i18next';
 import { language } from '@/config/constants';
+import { useState } from 'react';
+import { MdClose } from 'react-icons/md';
 
 export default function Header() {
+	const [menu, setMenu] = useState(false);
 	const { toggleColorMode, colorMode } = useColorMode();
 	const { t, i18n } = useTranslation();
 
@@ -30,14 +33,19 @@ export default function Header() {
 
 	return (
 		<Flex
+			w={'full'}
 			px={{ base: 2, lg: 16 }}
 			h={24}
 			align={'center'}
-			bg={'rgba(250,250,250,0.15)'}
+			bg={'gray.800'}
 			justifyContent={'space-between'}
 			borderBottom={'1px'}
 			borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
 			shadow={'base'}
+			position={'fixed'}
+			top={0}
+			left={0}
+			zIndex={99}
 		>
 			<Link href={'/'}>
 				{colorMode === 'light' ? (
@@ -46,7 +54,102 @@ export default function Header() {
 					<Image w={40} src={'https://6459153c9655650068ca2cb3--invest-in-school.netlify.app/light_logo.png'} alt='logo' />
 				)}
 			</Link>
-			<HStack gap={8}>
+			{!menu ? (
+				<IconButton
+					display={{ sm: 'block', md: 'none' }}
+					position={'absolute'}
+					right={2}
+					aria-label='color-mode'
+					fontSize={'3xl'}
+					icon={<BiMenuAltRight />}
+					colorScheme={'facebook'}
+					variant={'ghost'}
+					cursor={'pointer'}
+					onClick={() => setMenu(prev => !prev)}
+				/>
+			) : (
+				<IconButton
+					display={{ sm: 'block', md: 'none' }}
+					position={'absolute'}
+					right={2}
+					aria-label='color-mode'
+					fontSize={'3xl'}
+					icon={<MdClose />}
+					colorScheme={'facebook'}
+					variant={'ghost'}
+					cursor={'pointer'}
+					onClick={() => setMenu(prev => !prev)}
+				/>
+			)}
+			{menu ? (
+				<Flex
+					zIndex={9}
+					w={'full'}
+					h={'50vh'}
+					flexDirection={'column'}
+					gap={8}
+					py={6}
+					position={'absolute'}
+					top={24}
+					right={0}
+					bg={'gray.800'}
+				>
+					<Flex flexDirection={'column'} textAlign={'center'}>
+						<Button variant={'outline'} py={7}>
+							<Link href={'/'}>{t('home', { ns: 'layout' })}</Link>
+						</Button>
+						<Button variant={'outline'} py={7}>
+							<Link href={'/about'}>{t('about', { ns: 'layout' })}</Link>
+						</Button>
+						<Button variant={'outline'} py={7}>
+							<Link href={'/course'}>{t('course', { ns: 'layout' })}</Link>
+						</Button>
+						<Button variant={'outline'} py={7}>
+							<Link href={'/contact'}>{t('contact', { ns: 'layout' })}</Link>
+						</Button>
+					</Flex>
+					<HStack>
+						<Menu>
+							<MenuButton
+								aria-label='translate'
+								as={IconButton}
+								icon={<MdGTranslate />}
+								colorScheme={'facebook'}
+								variant={'outline'}
+							/>
+							<MenuList>
+								{language.map(item => (
+									<MenuItem
+										key={item.lng}
+										onClick={() => onLanguage(item.lng)}
+										backgroundColor={i18n.resolvedLanguage === item.lng ? 'facebook.500' : ''}
+									>
+										<Flex gap={4}>
+											<Image w={8} src={item.img} alt='A descriptive text for the image' /> {item.nativeLang}
+										</Flex>
+									</MenuItem>
+								))}
+							</MenuList>
+						</Menu>
+
+						<IconButton
+							aria-label='color-mode'
+							onClick={toggleColorMode}
+							icon={colorMode == 'light' ? <BsFillMoonFill /> : <BsFillSunFill />}
+							colorScheme={'facebook'}
+							variant={'outline'}
+						/>
+						<Link href={'/signin'}>
+							<Button rightIcon={<FaUserGraduate />} colorScheme='facebook' variant={'outline'}>
+								{t('login', { ns: 'layout' })}
+							</Button>
+						</Link>
+					</HStack>
+				</Flex>
+			) : (
+				''
+			)}
+			<HStack gap={8} display={{ sm: 'none', md: 'flex' }}>
 				<Flex display={{ base: 'none', md: 'flex' }} gap={7}>
 					<Link href={'/'}>{t('home', { ns: 'layout' })}</Link>
 					<Link href={'/about'}>{t('about', { ns: 'layout' })}</Link>
@@ -90,16 +193,6 @@ export default function Header() {
 						</Button>
 					</Link>
 				</HStack>
-				<Box display={{ base: 'block', md: 'none' }}>
-					<IconButton
-						aria-label='color-mode'
-						fontSize={'3xl'}
-						icon={<BiMenuAltRight />}
-						colorScheme={'facebook'}
-						variant={'ghost'}
-						cursor={'pointer'}
-					/>
-				</Box>
 			</HStack>
 		</Flex>
 	);

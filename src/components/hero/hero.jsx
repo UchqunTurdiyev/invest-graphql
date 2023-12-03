@@ -8,7 +8,7 @@ export default function Hero({ item }) {
 	const { t } = useTranslation();
 
 	return (
-		<Box>
+		<Box mt={{ sm: 14, md: 20, lg: 24 }}>
 			<Box w={'full'} h={'600px'} pos={'relative'}>
 				<Image src={item.photo.url} alt='home' w={'full'} h={'full'} objectFit={'cover'} />
 				<Box
