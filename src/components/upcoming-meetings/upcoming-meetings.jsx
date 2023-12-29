@@ -53,10 +53,16 @@ export default function UpcomingMeeting({ upcoming }) {
 														bgGradient='linear(200deg, transparent, rgba(0,0,0, 0.9))'
 													></Box>
 													<Box position={'absolute'} bottom={2} left={2}>
-														<Text fontSize={'24px'}>{item.node.title}</Text>
+														<Text fontSize={'24px'} color={useColorModeValue('gray.300', 'gray.100')}>
+															{item.node.title}
+														</Text>
 
-														<Text fontSize={'14px'}>{item.node.desc}</Text>
-														<Text fontSize={'14px'}>{item.node.data}</Text>
+														<Text fontSize={'14px'} color={useColorModeValue('gray.300', 'gray.100')}>
+															{item.node.desc}
+														</Text>
+														<Text fontSize={'14px'} color={useColorModeValue('gray.300', 'gray.100')}>
+															{item.node.data}
+														</Text>
 													</Box>
 												</Box>
 											</Flex>

@@ -70,7 +70,7 @@ const CoursePages = () => {
 												},
 											}}
 										>
-											<Link href={` https://t.me/+${item.node.tell}`}>
+											<Link href={`https://t.me/+${item.node.tell}`}>
 												<Button
 													h={'auto'}
 													py={2}

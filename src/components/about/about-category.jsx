@@ -53,37 +53,71 @@ export default function AboutCategory({ aboutData }) {
 					gap={4}
 					mt={10}
 				>
-					{filteredData().map(el => (
-						<motion.div key={el.node.id} layout>
-							<Box pos={'relative'}>
-								<Image
-									src={el.node.photo.url}
-									alt={el.node.title}
-									borderRadius={'lg'}
-									w={'full'}
-									h={'250px'}
-									objectFit={'cover'}
-								/>
-								<Box
-									pos={'absolute'}
-									minH={'90px'}
-									bg={backgroundColor}
-									left={2}
-									right={2}
-									bottom={-10}
-									borderRadius={'lg'}
-									boxShadow={'dark-lg'}
-									p={2}
-								>
-									<Text fontSize={'xl'}>{el.node.title}</Text>
-									<Text fontSize={'sm'} color={'gray.500'}>
-										{el.node.desc.slice(0, 100)}...
-									</Text>
-									<Button variant={'link'}>More...</Button>
+					{filteredData().length
+						? filteredData().map(el => (
+								<motion.div key={el.node.id} layout>
+									<Box pos={'relative'}>
+										<Image
+											src={el.node.photo.url}
+											alt={el.node.title}
+											borderRadius={'lg'}
+											w={'full'}
+											h={'250px'}
+											objectFit={'cover'}
+										/>
+										<Box
+											pos={'absolute'}
+											minH={'90px'}
+											bg={backgroundColor}
+											left={2}
+											right={2}
+											bottom={-10}
+											borderRadius={'lg'}
+											boxShadow={'dark-lg'}
+											p={2}
+										>
+											<Text fontSize={'xl'}>{el.node.title}</Text>
+											<Text fontSize={'sm'} color={'gray.500'}>
+												{el.node.desc.slice(0, 100)}...
+											</Text>
+											{el.node.data}
+										</Box>
+									</Box>
+								</motion.div>
+						  ))
+						: aboutData.map(el => (
+								<Box key={el.node.id}>
+									<motion.div key={el.node.id} layout>
+										<Box pos={'relative'}>
+											<Image
+												src={el.node.photo.url}
+												alt={el.node.title}
+												borderRadius={'lg'}
+												w={'full'}
+												h={'250px'}
+												objectFit={'cover'}
+											/>
+											<Box
+												pos={'absolute'}
+												minH={'90px'}
+												bg={backgroundColor}
+												left={2}
+												right={2}
+												bottom={-10}
+												borderRadius={'lg'}
+												boxShadow={'dark-lg'}
+												p={2}
+											>
+												<Text fontSize={'xl'}>{el.node.title}</Text>
+												<Text fontSize={'sm'} color={'gray.500'}>
+													{el.node.desc.slice(0, 100)}...
+												</Text>
+												{el.node.data}
+											</Box>
+										</Box>
+									</motion.div>
 								</Box>
-							</Box>
-						</motion.div>
-					))}
+						  ))}
 				</Grid>
 			</Box>
 			{/* <Box mt={10}>
