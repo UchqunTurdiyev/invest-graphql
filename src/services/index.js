@@ -224,3 +224,54 @@ export const getAboutBottom = async () => {
 	const result = await request(graphqlAPI, query);
 	return result.scienceAboutsConnection.edges;
 };
+
+export const getAmount = async () => {
+	const query = gql`
+		query Assets {
+			amountsConnection {
+				edges {
+					node {
+						id
+						number
+						title
+						video {
+							url
+						}
+						youtube
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.amountsConnection.edges;
+};
+
+export const getCoursePage = async () => {
+	const query = gql`
+		query Assets {
+			coursePagesConnection {
+				edges {
+					node {
+						author
+						authorImg {
+							url
+						}
+						data
+						desc
+						description
+						id
+						image {
+							url
+						}
+						title
+						tell
+						telegram
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.coursePagesConnection.edges;
+};

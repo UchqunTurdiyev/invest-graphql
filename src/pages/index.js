@@ -5,15 +5,13 @@ import {
 	getAboutBottom,
 	getAboutHero,
 	getAboutLeft,
+	getAmount,
 	getContainer,
 	getCourse,
+	getCoursePage,
 	getEducation,
 	getHero,
 	getHeroCarousel,
-	getPost,
-	getPosts,
-	getScience,
-	getScienseLeft,
 	getUpcomingMeetings,
 } from '@/services';
 import { Footer, Header, Main } from '@/components';
@@ -21,7 +19,18 @@ import SEO from '@/layout/seo';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home({ posts, hero, carousel, upcoming, container, course, aboutHero, aboutBottom, aboutLeft }) {
+export default function Home({
+	amount,
+	hero,
+	carousel,
+	upcoming,
+	container,
+	course,
+	aboutHero,
+	aboutBottom,
+	aboutLeft,
+	coursePage,
+}) {
 	return (
 		<SEO
 			metaTitle='Invest school'
@@ -40,6 +49,8 @@ export default function Home({ posts, hero, carousel, upcoming, container, cours
 				aboutHero={aboutHero}
 				aboutBottom={aboutBottom}
 				aboutLeft={aboutLeft}
+				amount={amount}
+				coursePage={coursePage}
 			/>
 			<Footer />
 		</SEO>
@@ -57,8 +68,10 @@ export async function getStaticProps() {
 	const aboutHero = (await getAboutHero()) || [];
 	const aboutBottom = (await getAboutBottom()) || [];
 	const aboutLeft = (await getAboutLeft()) || [];
+	const amount = (await getAmount()) || [];
+	const coursePage = (await getCoursePage()) || [];
 
 	return {
-		props: { hero, carousel, education, upcoming, container, course, aboutHero, aboutBottom, aboutLeft },
+		props: { hero, carousel, education, upcoming, container, course, aboutHero, aboutBottom, aboutLeft, amount, coursePage },
 	};
 }

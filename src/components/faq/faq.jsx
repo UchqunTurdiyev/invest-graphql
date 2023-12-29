@@ -4,25 +4,25 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import React from 'react';
 import FaqContact from './faq-contact';
 
-export default function Faq() {
+export default function Faq({ aboutBottom }) {
 	return (
 		<Box px={{ base: 2, lg: 20 }} py={10}>
 			<Heading borderBottom={'2px'} borderColor='gray.600' py={4}>
 				LET'S GET IN TOUCH
 			</Heading>
 			<Accordion allowToggle defaultIndex={[0]} w={'full'} my={6} p={6} bg={'white'} textColor={'gray.700'} rounded={'3xl'}>
-				{faq.map((item, id) => (
-					<div key={id}>
+				{aboutBottom.map(item => (
+					<div key={item.node.id}>
 						<AccordionItem>
 							<h2>
 								<AccordionButton>
-									<Box as='span' flex='1' textAlign='left' fontSize={'2xl'} fontWeight={'bold'} color={id == 0 ? 'red' : '#333'}>
-										{item.title}
+									<Box as='span' flex='1' textAlign='left' fontSize={'2xl'} fontWeight={'bold'}>
+										{item.node.title}
 									</Box>
 									<AccordionIcon />
 								</AccordionButton>
 							</h2>
-							<AccordionPanel pb={4}>{item.description}</AccordionPanel>
+							<AccordionPanel pb={4}>{item.node.desc}</AccordionPanel>
 						</AccordionItem>
 					</div>
 				))}

@@ -7,3 +7,4 @@ export { default as SignIn } from './auth/sign-in';
 export { default as SignUp } from './auth/sign-up';
 export { default as Contact } from './contact/contact';
 export { default as PopularCourse } from './popular-course/popular-course';
+export { default as CoursePage } from './course-page/coursePage';

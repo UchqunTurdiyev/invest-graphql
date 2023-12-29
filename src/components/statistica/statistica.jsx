@@ -3,7 +3,7 @@ import { Box, Center, Flex, Grid, HStack, Heading, Icon, Image, Link, Text, useC
 import React from 'react';
 import { BsPlayCircle } from 'react-icons/bs';
 
-export default function Statistic() {
+export default function Statistic({ amount }) {
 	return (
 		<Box
 			w={'full'}

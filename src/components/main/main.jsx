@@ -9,7 +9,7 @@ import Degree from '../degree/degree';
 import Faq from '../faq/faq';
 import { Box, useColorModeValue } from '@chakra-ui/react';
 
-export default function Main({ posts, hero, carousel, education, upcoming, course, aboutHero, aboutLeft, aboutBottom }) {
+export default function Main({ amount, hero, carousel, coursePage, upcoming, course, aboutHero, aboutLeft, aboutBottom }) {
 	return (
 		<>
 			{hero.map(item => (
@@ -28,8 +28,8 @@ export default function Main({ posts, hero, carousel, education, upcoming, cours
 				<HomePageCarousel itemCar={carousel} />
 				<UpcomingMeeting upcoming={upcoming} />
 				<Degree aboutHero={aboutHero} aboutLeft={aboutLeft} />
-				<Faq />
-				<Statistic />
+				<Faq aboutBottom={aboutBottom} />
+				<Statistic amount={amount} />
 				<PopularCourse course={course} />
 			</Box>
 		</>

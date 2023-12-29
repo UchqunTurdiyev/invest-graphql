@@ -117,7 +117,7 @@ export default function Header() {
 						</Button>
 					</Flex>
 					<HStack ml={4}>
-						<Menu>
+						{/* <Menu>
 							<MenuButton
 								aria-label='translate'
 								as={IconButton}
@@ -138,7 +138,7 @@ export default function Header() {
 									</MenuItem>
 								))}
 							</MenuList>
-						</Menu>
+						</Menu> */}
 
 						<IconButton
 							aria-label='color-mode'
@@ -147,11 +147,11 @@ export default function Header() {
 							colorScheme={'facebook'}
 							variant={'outline'}
 						/>
-						<Link href={'/signin'}>
+						{/* <Link href={'/signin'}>
 							<Button rightIcon={<FaUserGraduate />} colorScheme='facebook' variant={'outline'}>
 								{t('login', { ns: 'layout' })}
 							</Button>
-						</Link>
+						</Link> */}
 					</HStack>
 				</Flex>
 			) : (
@@ -173,7 +173,7 @@ export default function Header() {
 					</Link>
 				</Flex>
 				<HStack display={{ base: 'none', md: 'flex' }}>
-					<Menu>
+					{/* <Menu>
 						<MenuButton
 							aria-label='translate'
 							as={IconButton}
@@ -194,7 +194,7 @@ export default function Header() {
 								</MenuItem>
 							))}
 						</MenuList>
-					</Menu>
+					</Menu> */}
 
 					<IconButton
 						aria-label='color-mode'
@@ -203,11 +203,11 @@ export default function Header() {
 						colorScheme={'facebook'}
 						variant={'outline'}
 					/>
-					<Link href={'/signin'}>
+					{/* <Link href={'/signin'}>
 						<Button rightIcon={<FaUserGraduate />} colorScheme='facebook' variant={'outline'}>
 							{t('login', { ns: 'layout' })}
 						</Button>
-					</Link>
+					</Link> */}
 				</HStack>
 			</HStack>
 		</Flex>
