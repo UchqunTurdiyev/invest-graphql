@@ -32,7 +32,6 @@ export default function CourseDetailPage({ param }) {
 	}, []);
 	const detail = course.filter(item => param.slug === item.node.slug);
 
-	console.log(detail);
 	return (
 		<Box py={10} px={{ sm: 4, md: 6, lg: 10, xl: '36' }}>
 			{detail.map(item => (
@@ -45,26 +44,6 @@ export default function CourseDetailPage({ param }) {
 					<CardBody>
 						<Text>{item.node.desc}</Text>
 					</CardBody>
-
-					<CardFooter
-						justify='space-between'
-						flexWrap='wrap'
-						sx={{
-							'& > button': {
-								minW: '136px',
-							},
-						}}
-					>
-						<Button flex='1' variant='ghost' leftIcon={<BiLike />}>
-							Like
-						</Button>
-						<Button flex='1' variant='ghost' leftIcon={<BiChat />}>
-							Comment
-						</Button>
-						<Button flex='1' variant='ghost' leftIcon={<BiShare />}>
-							Share
-						</Button>
-					</CardFooter>
 				</Card>
 			))}
 			<Divider my={6} size={'md'} />

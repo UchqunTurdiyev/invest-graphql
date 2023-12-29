@@ -20,8 +20,8 @@ export default function Degree({ aboutLeft, aboutHero }) {
 	const textUse = useColorModeValue('white', 'white');
 	return (
 		<>
-			{degree.map((el, id) => (
-				<Box key={id} w={'full'} py={28} px={{ base: 2, lg: 20 }} bg={`url(${el.image_bg})`} bgAttachment={'fixed'}>
+			{degree.map(el => (
+				<Box key={el.degree} w={'full'} py={28} px={{ base: 2, lg: 20 }} bg={`url(${el.image_bg})`} bgAttachment={'fixed'}>
 					<Flex gap={10} flexDirection={{ base: 'column', md: 'row' }}>
 						<Box w={'full'}>
 							{aboutLeft.map((deg, idx) => (

@@ -36,7 +36,7 @@ export default function Home({
 			metaTitle='Invest school'
 			metaDescription={'Invest school xususiy maktbai'}
 			author={'Uchqun Turdiev'}
-			metaKeywords={'school, uchqun'}
+			metaKeywords={'Talim'}
 			ogImage={'https://6459153c9655650068ca2cb3--invest-in-school.netlify.app/light_logo.png'}
 		>
 			<Header />

@@ -26,7 +26,6 @@ const CoursePages = () => {
 	useEffect(() => {
 		getCoursePage().then(res => setCoursePage(res));
 	}, []);
-	console.log(coursePage);
 	return (
 		<Box className='2xl:px-20 lg:px-10 px-4'>
 			<section className='py-6 bg-w sm:py-8 lg:py-10 z-40 relative'>
@@ -54,7 +53,7 @@ const CoursePages = () => {
 														<Text>{item.node.title}</Text>
 													</Box>
 												</Flex>
-												<IconButton variant='ghost' colorScheme='gray' aria-label='See menu' icon={<BsThreeDotsVertical />} />
+												{item.node.data}
 											</Flex>
 										</CardHeader>
 										<CardBody>

@@ -87,7 +87,7 @@ export default function AboutCategory({ aboutData }) {
 						  ))
 						: aboutData.map(el => (
 								<Box key={el.node.id}>
-									<motion.div key={el.node.id} layout>
+									<motion.div layout>
 										<Box pos={'relative'}>
 											<Image
 												src={el.node.photo.url}

@@ -48,26 +48,9 @@ export default function MetingDetailPage({ param }) {
 					<CardBody>
 						<Text>{item.node.desc}</Text>
 					</CardBody>
-
-					<CardFooter
-						justify='space-between'
-						flexWrap='wrap'
-						sx={{
-							'& > button': {
-								minW: '136px',
-							},
-						}}
-					>
-						<Button flex='1' variant='ghost' leftIcon={<BiLike />}>
-							Like
-						</Button>
-						<Button flex='1' variant='ghost' leftIcon={<BiChat />}>
-							Comment
-						</Button>
-						<Button flex='1' variant='ghost' leftIcon={<BiShare />}>
-							Share
-						</Button>
-					</CardFooter>
+					<Text textAlign={'right'} p={2}>
+						{item.node.data}
+					</Text>
 				</Card>
 			))}
 			<Divider my={6} size={'md'} />
@@ -85,6 +68,9 @@ export default function MetingDetailPage({ param }) {
 										<Text>{el.node.desc}</Text>
 									</Stack>
 								</CardBody>
+								<Text textAlign={'right'} p={2}>
+									{el.node.data}
+								</Text>
 							</Card>
 						</Link>
 					</GridItem>
