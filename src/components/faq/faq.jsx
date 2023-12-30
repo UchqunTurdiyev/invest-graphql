@@ -8,7 +8,7 @@ export default function Faq({ aboutBottom }) {
 	return (
 		<Box px={{ base: 2, lg: 20 }} py={10}>
 			<Heading borderBottom={'2px'} borderColor='gray.600' py={4}>
-				LET'S GET IN TOUCH
+				Nima uchun biz
 			</Heading>
 			<Accordion allowToggle defaultIndex={[0]} w={'full'} my={6} p={6} bg={'white'} textColor={'gray.700'} rounded={'3xl'}>
 				{aboutBottom.map(item => (

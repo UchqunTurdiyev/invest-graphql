@@ -10,7 +10,6 @@ export default function Contact() {
 	useEffect(() => {
 		getContact().then(res => setContact(res));
 	}, []);
-	console.log(contact);
 	return (
 		<div>
 			{/* <!-- Container htmlFor demo purpose --> */}

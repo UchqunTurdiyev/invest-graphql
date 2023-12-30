@@ -41,7 +41,7 @@ export default function PopularCourse({ course }) {
 	return (
 		<Box py={10} px={{ base: 2, lg: 20 }}>
 			<Heading borderBottom={'2px'} borderColor='gray.600' py={4} mt={10}>
-				OUR POPULAR COURSES
+				Bizning top kurslarimiz
 			</Heading>
 			<Box mt={8}>
 				<Carousel responsive={responsive}>
@@ -65,7 +65,7 @@ export default function PopularCourse({ course }) {
 								<CardFooter>
 									<ButtonGroup spacing='2'>
 										<Button variant='solid' colorScheme='blue'>
-											Watch now
+											Hoziroq ko'ring
 										</Button>
 									</ButtonGroup>
 								</CardFooter>

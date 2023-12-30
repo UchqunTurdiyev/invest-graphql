@@ -97,22 +97,26 @@ export default function Header() {
 					<Flex flexDirection={'column'} textAlign={'center'}>
 						<Button variant={'outline'} py={7}>
 							<Link className='text-slate-400' href={'/'}>
-								{t('home', { ns: 'layout' })}
+								{/* {t('home', { ns: 'layout' })} */}
+								Bosh sahifa
 							</Link>
 						</Button>
 						<Button variant={'outline'} py={7}>
 							<Link className='text-slate-400' href={'/about'}>
-								{t('about', { ns: 'layout' })}
+								{/* {t('about', { ns: 'layout' })} */}
+								Biz haqimizda
 							</Link>
 						</Button>
 						<Button variant={'outline'} py={7}>
 							<Link className='text-slate-400' href={'/course'}>
-								{t('course', { ns: 'layout' })}
+								{/* {t('course', { ns: 'layout' })} */}
+								Kurslar
 							</Link>
 						</Button>
 						<Button variant={'outline'} py={7}>
 							<Link className='text-slate-400' href={'/contact'}>
-								{t('contact', { ns: 'layout' })}
+								{/* {t('contact', { ns: 'layout' })} */}
+								Biz bilan bog'lanish
 							</Link>
 						</Button>
 					</Flex>
@@ -160,16 +164,20 @@ export default function Header() {
 			<HStack gap={8} display={{ sm: 'none', md: 'flex' }}>
 				<Flex display={{ base: 'none', md: 'flex' }} gap={7}>
 					<Link className='text-white/80' href={'/'}>
-						{t('home', { ns: 'layout' })}
+						{/* {t('home', { ns: 'layout' })} */}
+						Bosh sahifa
 					</Link>
 					<Link className='text-white/80' href={'/about'}>
-						{t('about', { ns: 'layout' })}
+						{/* {t('about', { ns: 'layout' })} */}
+						Biz haqimizda
 					</Link>
 					<Link className='text-white/80' href={'/course'}>
-						{t('course', { ns: 'layout' })}
+						{/* {t('course', { ns: 'layout' })} */}
+						Kurslar
 					</Link>
 					<Link className='text-white/80' href={'/contact'}>
-						{t('contact', { ns: 'layout' })}
+						{/* {t('contact', { ns: 'layout' })} */}
+						Biz bilan bog'lanish
 					</Link>
 				</Flex>
 				<HStack display={{ base: 'none', md: 'flex' }}>

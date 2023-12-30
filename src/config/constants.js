@@ -154,44 +154,7 @@ export const upcomingMeetings = [
 export const degree = [
 	{
 		image_bg: 'https://themewagon.github.io/edu-meeting/assets/images/apply-bg.jpg',
-		degree: [
-			{
-				title: 'APPLY FOR BACHELOR DEGREE',
-				description:
-					'You are allowed to use this edu meeting CSS template for your school or university or business. You can feel free to modify or edit this layout.',
-			},
-			{
-				title: 'APPLY FOR BACHELOR DEGREE',
-				description:
-					'You are not allowed to redistribute the template ZIP file on any other template website. Please contact us for more information.',
-			},
-		],
-		accardion: [
-			{
-				id: 1,
-				title: 'About Edu Meeting HTML Template',
-				description:
-					'If you want to get the latest collection of HTML CSS templates for your websites, you may visit Too CSS website. If you need a working Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-			},
-			{
-				id: 2,
-				title: 'About Edu Meeting HTML Template',
-				description:
-					'Etiam posuere metus orci, vel consectetur elit imperdiet eu. Cras ipsum magna, maximus at semper sit amet, eleifend eget neque. Nunc facilisis quam purus, sed vulputate augue interdum vitae. Aliquam a elit massa.Nulla malesuada elit lacus, ac ultricies massa varius sed. Etiam eu metus eget nibh consequat aliquet. Proin fringilla, quam at euismod porttitor, odio odio tempus ligula, ut feugiat ex erat nec mauris. Donec viverra velit eget lectus sollicitudin tincidunt.',
-			},
-			{
-				id: 3,
-				title: 'About Edu Meeting HTML Template',
-				description:
-					'Maecenas suscipit enim libero, vel lobortis justo condimentum id. Interdum et malesuada fames ac ante ipsum primis in faucibus.Sed eleifend metus sit amet magna tristique, posuere laoreet arcu semper. Nulla pellentesque ut tortor sit amet maximus. In eu libero ullamcorper, semper nisi quis, convallis nisi.',
-			},
-			{
-				id: 4,
-				title: 'About Edu Meeting HTML Template',
-				description:
-					'If you want to get the latest collection of HTML CSS templates for your websites, you may visit Too CSS website. If you need a working',
-			},
-		],
+		id: 1,
 	},
 ];
 

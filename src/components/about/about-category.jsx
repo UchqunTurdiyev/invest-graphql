@@ -120,9 +120,6 @@ export default function AboutCategory({ aboutData }) {
 						  ))}
 				</Grid>
 			</Box>
-			{/* <Box mt={10}>
-				<Footer />
-			</Box> */}
 		</Box>
 	);
 }

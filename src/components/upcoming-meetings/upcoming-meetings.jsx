@@ -15,7 +15,7 @@ export default function UpcomingMeeting({ upcoming }) {
 			{upcomingMeetings.map(el => (
 				<Box key={el.id}>
 					<Heading pt={0} textAlign={'center'}>
-						UPCOMING MEETINGS
+						Tafsilotlar
 					</Heading>
 					<Box w={'100%'} h={'1px'} my={5} mx={'auto'} bg={colorMode}></Box>
 					<Flex w={'full'} my={10} gap={5} flexDirection={{ base: 'column', lg: 'row' }}>

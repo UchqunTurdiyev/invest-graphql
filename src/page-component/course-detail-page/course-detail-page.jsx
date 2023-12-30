@@ -47,7 +47,7 @@ export default function CourseDetailPage({ param }) {
 				</Card>
 			))}
 			<Divider my={6} size={'md'} />
-			<Heading pb={4}>Posts</Heading>
+			<Heading pb={4}>Postlar</Heading>
 			<Grid gridTemplateColumns={{ sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }} gap={3}>
 				{course.map(el => (
 					<GridItem key={el.node.id} w='full' h='auto'>

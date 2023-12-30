@@ -12,6 +12,7 @@ import {
 	getEducation,
 	getHero,
 	getHeroCarousel,
+	getStatistik,
 	getUpcomingMeetings,
 } from '@/services';
 import { Footer, Header, Main } from '@/components';
@@ -20,7 +21,7 @@ import SEO from '@/layout/seo';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home({
-	amount,
+	statistic,
 	hero,
 	carousel,
 	upcoming,
@@ -49,7 +50,7 @@ export default function Home({
 				aboutHero={aboutHero}
 				aboutBottom={aboutBottom}
 				aboutLeft={aboutLeft}
-				amount={amount}
+				statistic={statistic}
 				coursePage={coursePage}
 			/>
 			<Footer />
@@ -58,7 +59,6 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-	// const posts = (await getPosts()) || [];
 	const hero = (await getHero()) || [];
 	const carousel = (await getHeroCarousel()) || [];
 	const education = (await getEducation()) || [];
@@ -68,10 +68,22 @@ export async function getStaticProps() {
 	const aboutHero = (await getAboutHero()) || [];
 	const aboutBottom = (await getAboutBottom()) || [];
 	const aboutLeft = (await getAboutLeft()) || [];
-	const amount = (await getAmount()) || [];
 	const coursePage = (await getCoursePage()) || [];
+	const statistic = (await getStatistik()) || [];
 
 	return {
-		props: { hero, carousel, education, upcoming, container, course, aboutHero, aboutBottom, aboutLeft, amount, coursePage },
+		props: {
+			hero,
+			carousel,
+			education,
+			upcoming,
+			container,
+			course,
+			aboutHero,
+			aboutBottom,
+			aboutLeft,
+			coursePage,
+			statistic,
+		},
 	};
 }

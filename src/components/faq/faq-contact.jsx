@@ -19,7 +19,7 @@ export default function FaqContact() {
 	return (
 		<Box>
 			<Heading borderBottom={'2px'} borderColor='gray.600' py={4}>
-				SEND MESSAGE
+				XABAR YUBORISH
 			</Heading>
 			<Flex gap={6} flexDirection={{ base: 'column', md: 'row' }}>
 				<FormControl
@@ -44,7 +44,7 @@ export default function FaqContact() {
 						_hover={{ background: 'facebook.500' }}
 					></Textarea>
 					<Button bg={'whiteAlpha.200'} variant={'outline'} mt={4} _hover={{ background: 'facebook.500' }}>
-						SEND MESSAGE NOW
+						XABAR YUBORISH
 					</Button>
 				</FormControl>
 				<Box w={{ base: '100%', md: '40%' }} py={6} px={4} bg={'red.600'} my={6} borderRadius={'xl'}>

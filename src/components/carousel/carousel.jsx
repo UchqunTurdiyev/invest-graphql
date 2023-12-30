@@ -1,5 +1,4 @@
 'use client';
-import { data } from '@/config/constants';
 import { Box, Heading, Icon, Text, useColorModeValue } from '@chakra-ui/react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';

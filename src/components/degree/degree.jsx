@@ -21,22 +21,22 @@ export default function Degree({ aboutLeft, aboutHero }) {
 	return (
 		<>
 			{degree.map(el => (
-				<Box key={el.degree} w={'full'} py={28} px={{ base: 2, lg: 20 }} bg={`url(${el.image_bg})`} bgAttachment={'fixed'}>
+				<Box key={el.id} w={'full'} py={28} px={{ base: 2, lg: 20 }} bg={`url(${el.image_bg})`} bgAttachment={'fixed'}>
 					<Flex gap={10} flexDirection={{ base: 'column', md: 'row' }}>
 						<Box w={'full'}>
 							{aboutLeft.map((deg, idx) => (
-								<Box w={'full'} mb={8} p={8} bg={'rgba(250,250,250,0.15)'} key={idx}>
+								<Box w={'full'} mb={8} p={8} bg={'rgba(250,250,250,0.15)'} key={deg.node.id}>
 									<Heading color={headUse}>{deg.node.title}</Heading>
 									<Text color={textUse} py={4}>
 										{deg.node.desc}
 									</Text>
-									<Button>JOIN US NOW</Button>
+									<Button>HOZIROQ BIZGA QO'SHILING</Button>
 								</Box>
 							))}
 						</Box>
 						<Accordion allowToggle defaultIndex={[0]} w={'full'} p={6} bg={'white'} textColor={'gray.700'} rounded={'3xl'}>
 							{aboutHero.map(data => (
-								<div key={data.id}>
+								<div key={data.node.id}>
 									<AccordionItem>
 										<h2>
 											<AccordionButton>

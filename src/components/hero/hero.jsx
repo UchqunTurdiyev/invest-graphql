@@ -1,6 +1,6 @@
 'use client';
 import { Box, Heading, Image, Text, useColorModeValue } from '@chakra-ui/react';
-import { hero } from '@/config/constants';
+
 import { useTranslation } from 'react-i18next';
 
 export default function Hero({ item }) {
@@ -30,15 +30,11 @@ export default function Hero({ item }) {
 					{item.title}
 				</Text>
 				<Heading color={textUse} my={4}>
-					{/* {el.title} */}
 					{t('mainHeader', { ns: 'layout' })}
 				</Heading>
 				<Text color={textUse} fontWeight={'600'}>
 					{item.desc}
 				</Text>
-				{/* <Button mt={4} bg={BsListNested}>
-							JOIN US NOW!
-						</Button> */}
 			</Box>
 		</Box>
 	);

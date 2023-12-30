@@ -225,28 +225,6 @@ export const getAboutBottom = async () => {
 	return result.scienceAboutsConnection.edges;
 };
 
-export const getAmount = async () => {
-	const query = gql`
-		query Assets {
-			amountsConnection {
-				edges {
-					node {
-						id
-						number
-						title
-						video {
-							url
-						}
-						youtube
-					}
-				}
-			}
-		}
-	`;
-	const result = await request(graphqlAPI, query);
-	return result.amountsConnection.edges;
-};
-
 export const getCoursePage = async () => {
 	const query = gql`
 		query Assets {
@@ -274,4 +252,45 @@ export const getCoursePage = async () => {
 	`;
 	const result = await request(graphqlAPI, query);
 	return result.coursePagesConnection.edges;
+};
+
+export const getAmount = async () => {
+	const query = gql`
+		query Assets {
+			amountsConnection {
+				edges {
+					node {
+						data
+						desc
+						id
+						title
+						number
+						image {
+							url
+						}
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.amountsConnection.edges;
+};
+
+export const getStatistik = async () => {
+	const query = gql`
+		query Assets {
+			statistiksConnection {
+				edges {
+					node {
+						title
+						num
+						id
+					}
+				}
+			}
+		}
+	`;
+	const result = await request(graphqlAPI, query);
+	return result.statistiksConnection.edges;
 };

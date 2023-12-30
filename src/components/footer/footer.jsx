@@ -7,17 +7,17 @@ export default function Footer() {
 		<Box py={4} mt={6}>
 			<Divider />
 			<Center py={8} display={'flex'} flexDirection={'column'} gap={2}>
-				<Text textAlign={'center'}>COPYRIGHT © {new Date().getFullYear()} EDU MEETING CO., LTD. ALL RIGHTS RESERVED.</Text>
+				<Text textAlign={'center'}>MILLIY HUQUQ © {new Date().getFullYear()} INVEST SCHOOL, BARCHA HUQUQLAR HIMOYALANGAN.</Text>
 				<Text>
-					DESIGN:{' '}
+					BUYURTMA:{' '}
 					<Box as='span' color={'coral'}>
-						TEMPLATEMO
+						INVEST SCHOOL
 					</Box>
 				</Text>
 				<Text>
-					DISTIBUTED BY:{' '}
+					XIZMAT:{' '}
 					<Box as='span' color={'coral'}>
-						THEMEWAGON
+						MA'LUMOT OLISH UCHUN
 					</Box>{' '}
 				</Text>
 			</Center>

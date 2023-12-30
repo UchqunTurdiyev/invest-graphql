@@ -1,9 +1,9 @@
 'use client';
-import { Box, Center, Flex, Grid, HStack, Heading, Icon, Image, Link, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Center, Flex, Grid, HStack, Heading, Icon, Image, Link, Spinner, Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
-import { BsPlayCircle } from 'react-icons/bs';
 
-export default function Statistic({ amount }) {
+export default function Statistic({ statistic }) {
+	console.log(statistic);
 	return (
 		<Box
 			w={'full'}
@@ -14,24 +14,26 @@ export default function Statistic({ amount }) {
 			bgSize={'cover'}
 			bgAttachment={'fixed'}
 		>
-			{!staticData.length
-				? 'Loading...'
-				: staticData.map(el => (
-						<Box key={el.id} mb={{ base: 6, lg: 40 }} py={10}>
-							<Heading w={{ base: '100%', md: '400px' }} color='white'>
-								{el.title}
-							</Heading>
-							<Flex justifyContent={'space-between'} flexDirection={{ base: 'column', lg: 'row' }}>
-								<Grid
-									w={{ base: '100%', lg: '70%' }}
-									templateColumns='repeat(2, 1fr)'
-									templateRows='repeat(2, 1fr)'
-									mb={{ base: 0, lg: '-200px' }}
-									gap={8}
-									py={10}
-									mt={10}
-								>
-									{el.statistic.map(st => (
+			{!staticData.length ? (
+				<Spinner mx={'auto'} thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+			) : (
+				staticData.map(el => (
+					<Box key={el.id} mb={{ base: 6, lg: 40 }} py={10}>
+						<Heading w={{ base: '100%', md: '400px' }} color='white'>
+							{el.title}
+						</Heading>
+						<Flex justifyContent={'space-between'} flexDirection={{ base: 'column', lg: 'row' }}>
+							<Grid
+								w={{ base: '100%', lg: '70%' }}
+								templateColumns='repeat(2, 1fr)'
+								templateRows='repeat(2, 1fr)'
+								mb={{ base: 0, lg: '-200px' }}
+								gap={8}
+								py={10}
+								mt={10}
+							>
+								{statistic.length ? (
+									statistic.map(st => (
 										<Box
 											display={'flex'}
 											alignItems={'center'}
@@ -40,34 +42,45 @@ export default function Statistic({ amount }) {
 											w={'100%'}
 											h={52}
 											borderRadius={'xl'}
-											key={st.id}
+											key={st.node.id}
 											bg={'rgba(250, 250, 250, 0.15)'}
 											p={4}
 										>
 											<Heading color={'#f5a425'} textAlign={'center'} mb={4}>
-												{st.num}
+												{st.node.num}
 											</Heading>
 											<Text fontSize={'2xl'} textAlign={'center'} color='white'>
-												{st.title}
+												{st.node.title}
 											</Text>
 										</Box>
-									))}
-								</Grid>
-								<Flex w={{ base: '100%', lg: '60%' }} h={'full'} borderRadius={'xl'} ml={{ base: 2, lg: 20 }} mt={4}>
-									<Link href=''>
-										<Box w={{ base: '100%', lg: '450px' }} h={'400px'} bg={'#f5a425'} borderRadius={'2xl'} pos={'relative'}>
-											<Box pos={'absolute'} top={0} left={0} right={0} bottom={0} bg={'#f5a52597'} borderRadius={'2xl'}></Box>
+									))
+								) : (
+									<Spinner mx={'auto'} thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+								)}
+							</Grid>
+							<Flex w={{ base: '100%', lg: '60%' }} h={'full'} borderRadius={'xl'} ml={{ base: 2, lg: 20 }} mt={4}>
+								<Link href='/statistika'>
+									<Box w={{ base: '100%', lg: '450px' }} h={'400px'} bg={'#f5a425'} borderRadius={'2xl'} pos={'relative'}>
+										<Box pos={'absolute'} top={0} left={0} right={0} bottom={0} bg={'#f5a52597'} borderRadius={'2xl'}></Box>
 
-											<Center w={'full'} h={'full'} pos={'absolute'}>
-												<BsPlayCircle />
-											</Center>
-											<Image borderRadius={'2xl'} w={'full'} h={'full'} objectFit={'cover'} src={el.videoImg} alt={el.title} />
-										</Box>
-									</Link>
-								</Flex>
+										<Center w={'full'} h={'full'} pos={'absolute'} fontSize={'3xl'} textColor={'#000'}>
+											Bizning natijalar
+										</Center>
+										<Image
+											borderRadius={'2xl'}
+											w={'full'}
+											h={'full'}
+											objectFit={'cover'}
+											src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR47E6OkURy6X6Af5_SkVyHvArsWngX6fKgOQ&usqp=CAU'}
+											alt={el.title}
+										/>
+									</Box>
+								</Link>
 							</Flex>
-						</Box>
-				  ))}
+						</Flex>
+					</Box>
+				))
+			)}
 		</Box>
 	);
 }
@@ -75,13 +88,7 @@ export default function Statistic({ amount }) {
 export const staticData = [
 	{
 		id: 1,
-		title: 'A Few Facts About Our University',
+		title: 'Bizning yillik natijalar',
 		videoImg: 'https://avatars.mds.yandex.net/i?id=a19d2da3a1b9e23ccb5b33c9d0151aeb98752548-9181379-images-thumbs&n=13',
-		statistic: [
-			{ id: 1, title: 'Succesed Students', num: 94 },
-			{ id: 2, title: 'New Students', num: 2450 },
-			{ id: 3, title: 'Current Teachers', num: 126 },
-			{ id: 4, title: 'Awards', num: 32 },
-		],
 	},
 ];
