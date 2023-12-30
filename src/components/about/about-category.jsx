@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Grid, HStack, Image, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Button, Flex, Grid, HStack, Image, Spinner, Text, useColorModeValue } from '@chakra-ui/react';
 import React, { useCallback, useState } from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../footer/footer';
@@ -27,25 +27,27 @@ export default function AboutCategory({ aboutData }) {
 		<Box>
 			<Box px={{ base: 2, lg: 20 }} py={10}>
 				<Flex justifyContent={'center'} flexWrap={'wrap'}>
-					{allCategoryButton.length
-						? allCategoryButton.map((el, idx) => (
-								<Button
-									variant={filter == el.id ? 'solid' : 'outline'}
-									// bg={'white'}
-									colorScheme='facebook'
-									// color='red.700'
-									// borderRadius={'full'}
-									// _hover={{ bg: 'red.700', color: 'white' }}
-									key={el.id}
-									borderRadius={0}
-									borderLeftRadius={idx == 0 ? 'lg' : 0}
-									borderRightRadius={allCategoryButton.length - 1 == idx ? 'lg' : 0}
-									onClick={() => setFilter(el.id)}
-								>
-									{el.label}
-								</Button>
-						  ))
-						: 'Loading...'}
+					{allCategoryButton.length ? (
+						allCategoryButton.map((el, idx) => (
+							<Button
+								variant={filter == el.id ? 'solid' : 'outline'}
+								// bg={'white'}
+								colorScheme='facebook'
+								// color='red.700'
+								// borderRadius={'full'}
+								// _hover={{ bg: 'red.700', color: 'white' }}
+								key={el.id}
+								borderRadius={0}
+								borderLeftRadius={idx == 0 ? 'lg' : 0}
+								borderRightRadius={allCategoryButton.length - 1 == idx ? 'lg' : 0}
+								onClick={() => setFilter(el.id)}
+							>
+								{el.label}
+							</Button>
+						))
+					) : (
+						<Spinner mx={'auto'} thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+					)}
 				</Flex>
 				<Grid
 					gridTemplateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)', xl: 'repeat(3, 1fr)' }}

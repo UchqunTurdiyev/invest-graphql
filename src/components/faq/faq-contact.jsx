@@ -8,6 +8,7 @@ import {
 	FormControl,
 	Heading,
 	Input,
+	Spinner,
 	Text,
 	Textarea,
 	background,
@@ -48,15 +49,19 @@ export default function FaqContact() {
 					</Button>
 				</FormControl>
 				<Box w={{ base: '100%', md: '40%' }} py={6} px={4} bg={'red.600'} my={6} borderRadius={'xl'}>
-					{faqContact.map(el => (
-						<Box color={'white'} py={4} key={el.id}>
-							<Text>{el.title}</Text>
-							<Heading fontSize={'lg'} py={3}>
-								{el.description}
-							</Heading>
-							<Divider />
-						</Box>
-					))}
+					{faqContact.length ? (
+						faqContact.map(el => (
+							<Box color={'white'} py={4} key={el.id}>
+								<Text>{el.title}</Text>
+								<Heading fontSize={'lg'} py={3}>
+									{el.description}
+								</Heading>
+								<Divider />
+							</Box>
+						))
+					) : (
+						<Spinner mx={'auto'} thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+					)}
 				</Box>
 			</Flex>
 		</Box>

@@ -3,7 +3,6 @@ import { Box, Center, Flex, Grid, HStack, Heading, Icon, Image, Link, Spinner, T
 import React from 'react';
 
 export default function Statistic({ statistic }) {
-	console.log(statistic);
 	return (
 		<Box
 			w={'full'}

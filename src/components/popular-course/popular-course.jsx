@@ -9,6 +9,7 @@ import {
 	Divider,
 	Heading,
 	Image,
+	Spinner,
 	Stack,
 	Text,
 	useColorModeValue,
@@ -37,7 +38,6 @@ export default function PopularCourse({ course }) {
 			items: 1,
 		},
 	};
-	console.log(course);
 	return (
 		<Box py={10} px={{ base: 2, lg: 20 }}>
 			<Heading borderBottom={'2px'} borderColor='gray.600' py={4} mt={10}>
@@ -45,33 +45,37 @@ export default function PopularCourse({ course }) {
 			</Heading>
 			<Box mt={8}>
 				<Carousel responsive={responsive}>
-					{course.map(el => (
-						<Link href={`/course/${el.node.slug}`} key={el.node.id}>
-							<Card maxW='sm' mx={2}>
-								<CardBody>
-									<Image
-										width={'100%'}
-										h={'200'}
-										objectFit={'cover'}
-										src={el.node.photo.url}
-										alt='Green double couch with wooden legs'
-									/>
-									<Stack mt='6' spacing='3'>
-										<Heading size='md'>{el.node.title}</Heading>
-										<Text>{el.node.desc.slice(0, 40)}...</Text>
-									</Stack>
-								</CardBody>
-								<Divider />
-								<CardFooter>
-									<ButtonGroup spacing='2'>
-										<Button variant='solid' colorScheme='blue'>
-											Hoziroq ko'ring
-										</Button>
-									</ButtonGroup>
-								</CardFooter>
-							</Card>
-						</Link>
-					))}
+					{!course.lenght ? (
+						course.map(el => (
+							<Link href={`/course/${el.node.slug}`} key={el.node.id}>
+								<Card maxW='sm' mx={2}>
+									<CardBody>
+										<Image
+											width={'100%'}
+											h={'200'}
+											objectFit={'cover'}
+											src={el.node.photo.url}
+											alt='Green double couch with wooden legs'
+										/>
+										<Stack mt='6' spacing='3'>
+											<Heading size='md'>{el.node.title}</Heading>
+											<Text>{el.node.desc.slice(0, 40)}...</Text>
+										</Stack>
+									</CardBody>
+									<Divider />
+									<CardFooter>
+										<ButtonGroup spacing='2'>
+											<Button variant='solid' colorScheme='blue'>
+												Hoziroq ko'ring
+											</Button>
+										</ButtonGroup>
+									</CardFooter>
+								</Card>
+							</Link>
+						))
+					) : (
+						<Spinner mx={'auto'} thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+					)}
 				</Carousel>
 			</Box>
 		</Box>

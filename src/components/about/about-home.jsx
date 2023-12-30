@@ -1,4 +1,4 @@
-import { Box, Heading, Image, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Image, Spinner, Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 import AboutCategory from './about-category';
 
@@ -6,22 +6,24 @@ export default function AboutHome() {
 	const background = useColorModeValue('whiteAlpha.200', 'rgba(0,0,0, 0.3)');
 	return (
 		<Box>
-			{aboutHome.length
-				? aboutHome.map(el => (
-						<Box key={el.id} pos={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
-							<Box pos={'absolute'} w={'full'} h={'full'} bg={background} top={0} left={0}></Box>
-							<Image width={'full'} h={'400px'} objectFit={'cover'} src={el.image} alt={el.title} />
-							<Box pos={'absolute'}>
-								<Text textAlign={'center'} color={'white'}>
-									{el.titleSmall}
-								</Text>
-								<Heading textAlign={'center'} pt={6} fontSize={'4xl'} color={'white'}>
-									{el.title}
-								</Heading>
-							</Box>
+			{aboutHome.length ? (
+				aboutHome.map(el => (
+					<Box key={el.id} pos={'relative'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+						<Box pos={'absolute'} w={'full'} h={'full'} bg={background} top={0} left={0}></Box>
+						<Image width={'full'} h={'400px'} objectFit={'cover'} src={el.image} alt={el.title} />
+						<Box pos={'absolute'}>
+							<Text textAlign={'center'} color={'white'}>
+								{el.titleSmall}
+							</Text>
+							<Heading textAlign={'center'} pt={6} fontSize={'4xl'} color={'white'}>
+								{el.title}
+							</Heading>
 						</Box>
-				  ))
-				: 'Loading...'}
+					</Box>
+				))
+			) : (
+				<Spinner mx={'auto'} thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+			)}
 		</Box>
 	);
 }

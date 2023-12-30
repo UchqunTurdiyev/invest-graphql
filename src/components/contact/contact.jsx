@@ -4,6 +4,7 @@ import { BsTelephoneFill } from 'react-icons/bs';
 import { FaTelegram } from 'react-icons/fa';
 import { AiFillInstagram } from 'react-icons/ai';
 import Link from 'next/link';
+import { Spinner } from '@chakra-ui/react';
 
 export default function Contact() {
 	const [contact, setContact] = useState([]);
@@ -46,43 +47,47 @@ export default function Contact() {
 								</div>
 							</div>
 
-							{contact.map(el => (
-								<div className='flex flex-wrap items-center  gap-6' key={el.node.id}>
-									<Link href={`tel:+${el.node.title}`} className='w-[40%]'>
-										<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
-											<h1 className='text-3xl'>
-												<BsTelephoneFill />
-											</h1>
-											<h1 className='text-xl'>{el.node.title}</h1>
-										</div>
-									</Link>
-									<Link href={`tel:${el.node.num}`} className='w-[40%]'>
-										{console.log(el.node.title)}
-										<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
-											<h1 className='text-3xl'>
-												<BsTelephoneFill />
-											</h1>
-											<h1 className='text-xl'>{el.node.num}</h1>
-										</div>
-									</Link>
-									<Link href={`https://instagram.com/_u/${el.node.instagram}`} className='w-[40%]'>
-										<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
-											<h1 className='text-3xl'>
-												<AiFillInstagram />
-											</h1>
-											<h1 className='text-xl'>{el.node.instagram}</h1>
-										</div>
-									</Link>
-									<Link href={`https://t.me/${el.node.num}`} className='w-[40%]'>
-										<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
-											<h1 className='text-3xl'>
-												<FaTelegram />
-											</h1>
-											<h1 className='text-xl'>{el.node.telegram}</h1>
-										</div>
-									</Link>
-								</div>
-							))}
+							{contact.length ? (
+								contact.map(el => (
+									<div className='flex flex-wrap items-center  gap-6' key={el.node.id}>
+										<Link href={`tel:+${el.node.title}`} className='w-[40%]'>
+											<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
+												<h1 className='text-3xl'>
+													<BsTelephoneFill />
+												</h1>
+												<h1 className='text-xl'>{el.node.title}</h1>
+											</div>
+										</Link>
+										<Link href={`tel:${el.node.num}`} className='w-[40%]'>
+											{console.log(el.node.title)}
+											<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
+												<h1 className='text-3xl'>
+													<BsTelephoneFill />
+												</h1>
+												<h1 className='text-xl'>{el.node.num}</h1>
+											</div>
+										</Link>
+										<Link href={`https://instagram.com/_u/${el.node.instagram}`} className='w-[40%]'>
+											<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
+												<h1 className='text-3xl'>
+													<AiFillInstagram />
+												</h1>
+												<h1 className='text-xl'>{el.node.instagram}</h1>
+											</div>
+										</Link>
+										<Link href={`https://t.me/${el.node.num}`} className='w-[40%]'>
+											<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
+												<h1 className='text-3xl'>
+													<FaTelegram />
+												</h1>
+												<h1 className='text-xl'>{el.node.telegram}</h1>
+											</div>
+										</Link>
+									</div>
+								))
+							) : (
+								<Spinner mx={'auto'} thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+							)}
 						</div>
 					</div>
 				</section>
@@ -102,43 +107,46 @@ export default function Contact() {
 				<section className='mb-32'>
 					<div className='block rounded-lg bg-gray.300 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-gray-700'>
 						<div className='flex items-center gap-10'>
-							{contact.map(el => (
-								<div className='flex flex-wrap items-center  gap-6' key={el.node.id}>
-									<Link href={`tel:+${el.node.title}`} className='w-[40%]'>
-										<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
-											<h1 className='text-3xl'>
-												<BsTelephoneFill />
-											</h1>
-											<h1 className='text-xl'>{el.node.title}</h1>
-										</div>
-									</Link>
-									<Link href={`tel:${el.node.num}`} className='w-[40%]'>
-										{console.log(el.node.title)}
-										<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
-											<h1 className='text-3xl'>
-												<BsTelephoneFill />
-											</h1>
-											<h1 className='text-xl'>{el.node.num}</h1>
-										</div>
-									</Link>
-									<Link href={`https://instagram.com/_u/${el.node.instagram}`} className='w-[40%]'>
-										<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
-											<h1 className='text-3xl'>
-												<AiFillInstagram />
-											</h1>
-											<h1 className='text-xl'>{el.node.instagram}</h1>
-										</div>
-									</Link>
-									<Link href={`https://t.me/${el.node.num}`} className='w-[40%]'>
-										<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
-											<h1 className='text-3xl'>
-												<FaTelegram />
-											</h1>
-											<h1 className='text-xl'>{el.node.telegram}</h1>
-										</div>
-									</Link>
-								</div>
-							))}
+							{contact.length ? (
+								contact.map(el => (
+									<div className='flex flex-wrap items-center  gap-6' key={el.node.id}>
+										<Link href={`tel:+${el.node.title}`} className='w-[40%]'>
+											<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
+												<h1 className='text-3xl'>
+													<BsTelephoneFill />
+												</h1>
+												<h1 className='text-xl'>{el.node.title}</h1>
+											</div>
+										</Link>
+										<Link href={`tel:${el.node.num}`} className='w-[40%]'>
+											<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
+												<h1 className='text-3xl'>
+													<BsTelephoneFill />
+												</h1>
+												<h1 className='text-xl'>{el.node.num}</h1>
+											</div>
+										</Link>
+										<Link href={`https://instagram.com/_u/${el.node.instagram}`} className='w-[40%]'>
+											<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
+												<h1 className='text-3xl'>
+													<AiFillInstagram />
+												</h1>
+												<h1 className='text-xl'>{el.node.instagram}</h1>
+											</div>
+										</Link>
+										<Link href={`https://t.me/${el.node.num}`} className='w-[40%]'>
+											<div className=' hover:bg-slate-700 p-10 shadow-md border-2 bg-white-800 rounded-md flex flex-col items-center gap-5'>
+												<h1 className='text-3xl'>
+													<FaTelegram />
+												</h1>
+												<h1 className='text-xl'>{el.node.telegram}</h1>
+											</div>
+										</Link>
+									</div>
+								))
+							) : (
+								<Spinner mx={'auto'} thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+							)}
 							<div className='block w-full shrink-0 grow-0 basis-auto lg:flex lg:w-6/12 xl:w-[50%]'>
 								<div className='h-[500px] w-full'>
 									<iframe

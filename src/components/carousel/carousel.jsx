@@ -1,5 +1,5 @@
 'use client';
-import { Box, Heading, Icon, Text, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Icon, Spinner, Text, useColorModeValue } from '@chakra-ui/react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -30,30 +30,32 @@ export default function HomePageCarousel({ itemCar }) {
 	return (
 		<Box px={{ base: 2, lg: 20 }} py={5} mt={'-120px'}>
 			<Carousel responsive={responsive}>
-				{itemCar.length
-					? itemCar.map(el => (
-							<Box
-								key={el.node.id}
-								w={'95%'}
-								mx={'auto'}
-								h={'250px'}
-								display={'flex'}
-								alignItems={'center'}
-								justifyContent={'center'}
-								flexDirection={'column'}
-								borderRadius={'lg'}
-								px={2}
-								gap={4}
-								bg={bgImg}
-								bgRepeat={'no-repeat'}
-								bgSize={'cover'}
-							>
-								{/* <Icon fontSize={'2xl'}     /> */}
-								<Heading py={4}>{el.node.title}</Heading>
-								<Text textAlign={'center'}>{el.node.desc}</Text>
-							</Box>
-					  ))
-					: 'Loading...'}
+				{itemCar.length ? (
+					itemCar.map(el => (
+						<Box
+							key={el.node.id}
+							w={'95%'}
+							mx={'auto'}
+							h={'250px'}
+							display={'flex'}
+							alignItems={'center'}
+							justifyContent={'center'}
+							flexDirection={'column'}
+							borderRadius={'lg'}
+							px={2}
+							gap={4}
+							bg={bgImg}
+							bgRepeat={'no-repeat'}
+							bgSize={'cover'}
+						>
+							{/* <Icon fontSize={'2xl'}     /> */}
+							<Heading py={4}>{el.node.title}</Heading>
+							<Text textAlign={'center'}>{el.node.desc}</Text>
+						</Box>
+					))
+				) : (
+					<Spinner mx={'auto'} thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' />
+				)}
 			</Carousel>
 		</Box>
 	);
