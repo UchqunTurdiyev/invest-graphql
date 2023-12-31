@@ -18,7 +18,7 @@ export default function Main({ statistic, hero, carousel, upcoming, course, abou
 			<Box
 				w={'full'}
 				bg={useColorModeValue(
-					'url(https://img.wallpapersafari.com/desktop/1440/900/59/33/2wIUzO.jpg)',
+					'url(https://images.unsplash.com/photo-1571974096020-5c2775ac5d47?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwZmxhdCUyMGxheXxlbnwwfHwwfHx8MA%3D%3D)',
 					'url(https://themewagon.github.io/edu-meeting/assets/images/meetings-bg.jpg)'
 				)}
 				bgRepeat={'no-repeat'}
