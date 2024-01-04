@@ -37,7 +37,7 @@ export default function Header() {
 			px={{ base: 2, lg: 16 }}
 			h={24}
 			align={'center'}
-			bg={'gray.800'}
+			bg={useColorModeValue('gray.200', 'gray.700')}
 			justifyContent={'space-between'}
 			borderBottom={'1px'}
 			borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
@@ -92,29 +92,29 @@ export default function Header() {
 					position={'absolute'}
 					top={24}
 					right={0}
-					bg={'gray.800'}
+					bg={useColorModeValue('gray.100', 'gray.800')}
 				>
 					<Flex flexDirection={'column'} textAlign={'center'}>
 						<Button variant={'outline'} py={7}>
-							<Link className='text-slate-400' href={'/'}>
+							<Link className={useColorModeValue('gray-900', 'gray-100')} href={'/'}>
 								{/* {t('home', { ns: 'layout' })} */}
 								Bosh sahifa
 							</Link>
 						</Button>
 						<Button variant={'outline'} py={7}>
-							<Link className='text-slate-400' href={'/about'}>
+							<Link className={useColorModeValue('gray-900', 'gray-100')} href={'/about'}>
 								{/* {t('about', { ns: 'layout' })} */}
 								Biz haqimizda
 							</Link>
 						</Button>
 						<Button variant={'outline'} py={7}>
-							<Link className='text-slate-400' href={'/course'}>
+							<Link className={useColorModeValue('gray-900', 'gray-100')} href={'/course'}>
 								{/* {t('course', { ns: 'layout' })} */}
 								Kurslar
 							</Link>
 						</Button>
 						<Button variant={'outline'} py={7}>
-							<Link className='text-slate-400' href={'/contact'}>
+							<Link className={useColorModeValue('gray-900', 'gray-100')} href={'/contact'}>
 								{/* {t('contact', { ns: 'layout' })} */}
 								Biz bilan bog'lanish
 							</Link>
@@ -163,19 +163,19 @@ export default function Header() {
 			)}
 			<HStack gap={8} display={{ sm: 'none', md: 'flex' }}>
 				<Flex display={{ base: 'none', md: 'flex' }} gap={7}>
-					<Link className='text-white/80' href={'/'}>
+					<Link className={useColorModeValue('gray.7800', 'gray.100')} href={'/'}>
 						{/* {t('home', { ns: 'layout' })} */}
 						Bosh sahifa
 					</Link>
-					<Link className='text-white/80' href={'/about'}>
+					<Link className={useColorModeValue('gray.7800', 'gray.100')} href={'/about'}>
 						{/* {t('about', { ns: 'layout' })} */}
 						Biz haqimizda
 					</Link>
-					<Link className='text-white/80' href={'/course'}>
+					<Link className={useColorModeValue('gray.7800', 'gray.100')} href={'/course'}>
 						{/* {t('course', { ns: 'layout' })} */}
 						Kurslar
 					</Link>
-					<Link className='text-white/80' href={'/contact'}>
+					<Link className={useColorModeValue('gray.7800', 'gray.100')} href={'/contact'}>
 						{/* {t('contact', { ns: 'layout' })} */}
 						Biz bilan bog'lanish
 					</Link>

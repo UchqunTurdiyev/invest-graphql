@@ -19,7 +19,7 @@ import Link from 'next/link';
 export default function UpcomingMeeting({ upcoming }) {
 	const colorMode = useColorModeValue('gray.700', 'gray.400');
 	const boxMude = useColorModeValue('white', 'gray.700');
-	const btnMude = useColorModeValue('red.300', 'red.800');
+	const btnMude = useColorModeValue('blue.200', 'blue.600');
 	// const elCardMud = useColorModeValue('white', 'gray.700');
 
 	const upcomingHero = upcoming.slice(0, 4);
@@ -38,7 +38,7 @@ export default function UpcomingMeeting({ upcoming }) {
 								{upcoming.map(el => (
 									<Category key={el.node.id} item={el.node} />
 								))}
-								<Button mt={4} bg={btnMude}>
+								<Button mt={4} bg={btnMude} textColor={useColorModeValue('gray.900', 'gray.100')}>
 									Barcha postlarni ko'rish
 								</Button>
 							</Box>

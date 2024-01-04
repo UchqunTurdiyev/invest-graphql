@@ -65,7 +65,11 @@ export default function PopularCourse({ course }) {
 									<Divider />
 									<CardFooter>
 										<ButtonGroup spacing='2'>
-											<Button variant='solid' colorScheme='blue'>
+											<Button
+												variant='solid'
+												extColor={useColorModeValue('gray.900', 'gray.100')}
+												bgColor={useColorModeValue('blue.200', 'blue.600')}
+											>
 												Hoziroq ko'ring
 											</Button>
 										</ButtonGroup>
