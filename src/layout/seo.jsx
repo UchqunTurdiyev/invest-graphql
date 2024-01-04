@@ -28,11 +28,12 @@ export default function Seo(props) {
 				<meta property='og:image:width' content='1200' />
 				<meta property='og:locale' content='uz_UZ' />
 
-				<meta name='twitter:title' content={metaTitle} />
-				<meta name='twitter:image' content={ogImage} />
-				<meta name='twitter:card' content='summary_large_image' />
-				<meta name='twitter:description' content={metaDescription} />
-				<link rel='shortcut icon' href={siteConfig.favicon} type='image/x-icon' />
+				<meta name='telegram:title' content={metaTitle} />
+				<meta name='telegram:image' content={ogImage} />
+				<meta name='telegram:card' content='summary_large_image' />
+				<meta name='telegram:description' content={metaDescription} />
+				<link rel='shortcut icon' href={siteConfig.logo} type='image/x-icon' />
+				<link rel='shortcut icon' href={siteConfig.baseURL} type='image/x-icon' />
 				<link
 					rel='shortcut icon'
 					href={'https://6459153c9655650068ca2cb3--invest-in-school.netlify.app/light_logo.png'}
