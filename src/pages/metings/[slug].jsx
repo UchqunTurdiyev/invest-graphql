@@ -11,9 +11,6 @@ const MetingPageDetail = () => {
 		<SEO
 			metaTitle='Manaviy ozuqa'
 			metaDescription={'Invest school Sayohatlar, Uchrashuvlar, Dars jarayonlari, Bayramlar'}
-			author={'Uchqun Turdiev'}
-			metaKeywords={'Talim'}
-			ogImage={'https://6459153c9655650068ca2cb3--invest-in-school.netlify.app/light_logo.png'}
 		>
 			<MetingDetailPage param={param} />
 		</SEO>

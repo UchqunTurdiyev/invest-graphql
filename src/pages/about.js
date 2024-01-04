@@ -5,13 +5,7 @@ import React from 'react';
 
 const AboutPage = () => {
 	return (
-		<SEO
-			metaTitle='Biz haqimizda'
-			metaDescription={"Invest school haqida to'liq ma'lumot"}
-			author={'Uchqun Turdiev'}
-			metaKeywords={'Talim'}
-			ogImage={'https://6459153c9655650068ca2cb3--invest-in-school.netlify.app/light_logo.png'}
-		>
+		<SEO metaTitle='Biz haqimizda' metaDescription={"Invest school haqida to'liq ma'lumot"}>
 			<About />
 		</SEO>
 	);

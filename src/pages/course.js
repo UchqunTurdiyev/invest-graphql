@@ -5,13 +5,7 @@ import React from 'react';
 
 const CoursePage = () => {
 	return (
-		<SEO
-			metaTitle='Kurslar'
-			metaDescription={"Invest school O'quv sentri kurslari"}
-			author={'Uchqun Turdiev'}
-			metaKeywords={'Talim'}
-			ogImage={'https://6459153c9655650068ca2cb3--invest-in-school.netlify.app/light_logo.png'}
-		>
+		<SEO metaTitle='Kurslar' metaDescription={"Invest school O'quv sentri kurslari"}>
 			<CoursePages />
 		</SEO>
 	);

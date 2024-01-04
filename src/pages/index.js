@@ -33,13 +33,7 @@ export default function Home({
 	coursePage,
 }) {
 	return (
-		<SEO
-			metaTitle='Invest school'
-			metaDescription={'Invest school xususiy maktbai'}
-			author={'Uchqun Turdiev'}
-			metaKeywords={'Talim'}
-			ogImage={'https://6459153c9655650068ca2cb3--invest-in-school.netlify.app/light_logo.png'}
-		>
+		<SEO metaTitle='Invest school' metaDescription={'Invest school xususiy maktbai'}>
 			<Header />
 			<Main
 				hero={hero}
