@@ -30,7 +30,8 @@ export default function Hero({ item }) {
 					{item.title}
 				</Text>
 				<Heading color={textUse} my={4}>
-					{t('mainHeader', { ns: 'layout' })}
+					{/* {t('mainHeader', { ns: 'layout' })} */}
+					Invest school
 				</Heading>
 				<Text color={textUse} fontWeight={'600'}>
 					{item.desc}

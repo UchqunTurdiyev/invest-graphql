@@ -2,7 +2,14 @@ import Head from 'next/head';
 import React from 'react';
 import { siteConfig } from './site-config';
 
-export default function SEO({ children, metaDescription, metaKeywords, metaTitle, ogImage }) {
+export default function Seo(props) {
+	const {
+		children,
+		metaTitle = siteConfig.metaData.title,
+		metaDescription = siteConfig.metaData.description,
+		metaKeywords = siteConfig.metaData.keyword,
+		ogImage = siteConfig.metaData.ogImage,
+	} = props;
 	return (
 		<>
 			<Head>

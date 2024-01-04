@@ -16,7 +16,7 @@ import {
 	getUpcomingMeetings,
 } from '@/services';
 import { Footer, Header, Main } from '@/components';
-import SEO from '@/layout/seo';
+import Seo from '@/layout/seo';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -33,7 +33,7 @@ export default function Home({
 	coursePage,
 }) {
 	return (
-		<SEO metaTitle='Invest school' metaDescription={'Invest school xususiy maktbai'}>
+		<Seo metaTitle='Invest school' metaDescription={'Invest school xususiy maktbai'}>
 			<Header />
 			<Main
 				hero={hero}
@@ -48,7 +48,7 @@ export default function Home({
 				coursePage={coursePage}
 			/>
 			<Footer />
-		</SEO>
+		</Seo>
 	);
 }
 
