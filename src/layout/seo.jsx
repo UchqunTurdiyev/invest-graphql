@@ -11,7 +11,6 @@ export default function Seo(props) {
 		ogImage = siteConfig.metaData.ogImage,
 	} = props;
 
-	console.log(siteConfig.metaData.title);
 	return (
 		<>
 			<Head>

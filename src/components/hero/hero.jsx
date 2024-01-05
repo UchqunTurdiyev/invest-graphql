@@ -10,7 +10,6 @@ export default function Hero({ item }) {
 		'linear(to-r, rgba(0,0,0, 0.6), transparent)'
 	);
 	const { t } = useTranslation();
-
 	return (
 		<Box>
 			<Box w={'full'} h={'650px'} pos={'relative'}>
@@ -31,7 +30,7 @@ export default function Hero({ item }) {
 				</Text>
 				<Heading color={textUse} my={4}>
 					{/* {t('mainHeader', { ns: 'layout' })} */}
-					Invest school
+					{item.titleHead}
 				</Heading>
 				<Text color={textUse} fontWeight={'600'}>
 					{item.desc}

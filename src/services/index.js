@@ -1,6 +1,7 @@
 import { request, gql } from 'graphql-request';
 
-const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
+// const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
+const graphqlAPI = 'https://api-us-west-2.hygraph.com/v2/clnnfxvc40w4f01uld5977vv9/master';
 
 export const getHero = async () => {
 	const query = gql`
@@ -8,6 +9,7 @@ export const getHero = async () => {
 			heroesConnection {
 				edges {
 					node {
+						titleHead
 						desc
 						id
 						photo {
