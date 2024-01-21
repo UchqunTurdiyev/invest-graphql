@@ -43,7 +43,6 @@ export default function Seo(props) {
 					type='image/x-icon'
 				/>
 			</Head>
-
 			{children}
 		</>
 	);

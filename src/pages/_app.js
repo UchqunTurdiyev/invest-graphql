@@ -26,14 +26,12 @@ export default function App({ Component, pageProps }) {
 		};
 	}, [router]);
 	return (
-		<HydrationProvider>
+		<>
 			<I18nextProvider i18n={i18n}>
 				<ChakraProvider>
-					<Client>
-						<Component {...pageProps} />
-					</Client>
+					<Component {...pageProps} />
 				</ChakraProvider>
 			</I18nextProvider>
-		</HydrationProvider>
+		</>
 	);
 }
