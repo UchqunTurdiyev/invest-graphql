@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 // import 'styles/nprogress';
 import { ChakraProvider } from '@chakra-ui/react';
 import { Router, useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Client, HydrationProvider } from 'react-hydration-provider';
 import { I18nextProvider } from 'react-i18next';
 import NProgress from 'nprogress';
@@ -25,13 +25,27 @@ export default function App({ Component, pageProps }) {
 			router.events.off('routeChangeError', endLoading);
 		};
 	}, [router]);
-	return (
-		<>
-			<I18nextProvider i18n={i18n}>
-				<ChakraProvider>
-					<Component {...pageProps} />
-				</ChakraProvider>
-			</I18nextProvider>
-		</>
-	);
+
+	const [showChild, setShowChild] = useState(false);
+	useEffect(() => {
+		setShowChild(true);
+	}, []);
+
+	if (!showChild) {
+		return null;
+	}
+
+	if (typeof window === 'undefined') {
+		return <></>;
+	} else {
+		return (
+			<>
+				<I18nextProvider i18n={i18n}>
+					<ChakraProvider>
+						<Component {...pageProps} />
+					</ChakraProvider>
+				</I18nextProvider>
+			</>
+		);
+	}
 }
