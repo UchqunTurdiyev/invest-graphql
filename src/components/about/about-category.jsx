@@ -127,7 +127,7 @@ export default function AboutCategory({ aboutData }) {
 }
 
 export const allCategoryButton = [
-	{ label: 'All Category', id: 'all-categories' },
+	{ label: 'Barchasi', id: 'all-categories' },
 	{ label: 'Sayohat', id: 'sayohat' },
 	{ label: 'Bayramlar', id: 'bayramlar' },
 	{ label: 'Uchrashuvlar', id: 'uchrashuvlar' },

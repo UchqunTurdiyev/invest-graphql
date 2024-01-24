@@ -31,8 +31,8 @@ export default function AboutHome() {
 export const aboutHome = [
 	{
 		id: 1,
-		title: 'UPCOMING MEETINGS',
-		titleSmall: 'HERE ARE OUR UPCOMING MEETINGS',
+		title: 'Biz haqimizda',
+		titleSmall: 'Estalik uchun lavhalar',
 		image: 'https://themewagon.github.io/edu-meeting/assets/images/heading-bg.jpg',
 	},
 ];
