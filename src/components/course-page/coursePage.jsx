@@ -32,11 +32,11 @@ const CoursePages = () => {
 					<Text className='text-5xl pb-5'>
 						Bu{' '}
 						<span className='block w-full font-light text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-500 lg:inline'>
-							O'quv sentri
+							O'quv markazimizda
 						</span>{' '}
-						hozirda faolyat yuritadigan kurslarimiz
+						hozirda faoliyat yuritadigan kurslarimiz.
 					</Text>
-					<p className='pb-10'>Bizning ustozlar yuqori malakaga ega ular bilan shu erda batafsil ma'lumot olasiz</p>
+					<p className='pb-10'>Bizning ustozlar yuqori malakaga ega ular bilan shu yerda batafsil ma'lumot olasiz</p>
 
 					<Flex className='max-2xl:flex-wrap gap-3 justify-center'>
 						{coursePage.length ? (

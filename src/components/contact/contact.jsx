@@ -26,7 +26,7 @@ export default function Contact() {
 						<div className='block rounded-lg  px-6 md:py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20 py-4 md:px-12 -mt-[50px] md:-mt-[100px] backdrop-blur-[30px]'>
 							<div className='mx-auto max-w-[700px]'>
 								<h1 className='text-2xl text-left'>Invest schoolda o'qing va kelajagingizni biz bilan quring</h1>
-								<h1 className='pt-4'>Invest school shahar maktabi va o'quv sentri</h1>
+								<h1 className='pt-4'>Invest school shahar maktabi va o'quv markazi.</h1>
 							</div>
 						</div>
 					</div>
@@ -99,7 +99,7 @@ export default function Contact() {
 						<div className='block rounded-lg  px-6 py-4 md:py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.7)] dark:shadow-black/20  md:px-12 -mt-[50px] md:-mt-[100px] backdrop-blur-[30px]'>
 							<div className='mx-auto max-w-[700px]'>
 								<h1 className='text-2xl text-left'>Invest schoolda o'qing va kelajagingizni biz bilan quring</h1>
-								<h1 className='pt-4'>Invest school shahar maktabi va o'quv sentri</h1>
+								<h1 className='pt-4'>Invest school shahar maktabi va o'quv markazi</h1>
 							</div>
 						</div>
 					</div>
